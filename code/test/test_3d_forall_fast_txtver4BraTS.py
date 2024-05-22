@@ -86,9 +86,7 @@ def test_single_volume_3d_BrsTS(case_path, net, test_save_path, FLAGS):
         metric_evalIndicatorsOfOrgans[i-1] = calculate_metric_percase(
         prediction == i, label == i, (spacing[2], spacing[0], spacing[1]))
 
-    #保存预测好的数据
     imgt1_itk = sitk.GetImageFromArray(image[0].astype(np.float32))
-    # logging.info("imgt1_itk size:{}".format(imgt1_itk.GetSize()))
     imgt1_itk.CopyInformation(org_img_itk)
     imgt1ce_itk = sitk.GetImageFromArray(image[1].astype(np.float32))
     imgt1ce_itk.CopyInformation(org_img_itk)
@@ -107,7 +105,7 @@ def test_single_volume_3d_BrsTS(case_path, net, test_save_path, FLAGS):
     sitk.WriteImage(imgt2_itk, test_save_path + "/" + case_name + "_img_t2.nii.gz")
     sitk.WriteImage(imgflair_itk, test_save_path + "/" + case_name + "_img_flair.nii.gz")
     sitk.WriteImage(lab_itk, test_save_path + "/" + case_name + "_gt.nii.gz")
-    return metric_evalIndicatorsOfOrgans #长度为num_classes - 1
+    return metric_evalIndicatorsOfOrgans 
 
 def Inference(FLAGS, test_save_path):
     with open(FLAGS.data_root_path + '/{}'.format(FLAGS.testData), 'r') as f:
