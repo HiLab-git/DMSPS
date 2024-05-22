@@ -15,8 +15,7 @@ class RandomCrop_2D(object):
     def __init__(self, output_size, num_class = 8, with_sdf=False):
         self.output_size = output_size
         self.num_class = num_class
-        self.with_sdf = with_sdf # 不是很懂这个with_sdf的指标
-
+        self.with_sdf = with_sdf # 
     def __call__(self, sample):
         image, label, gt = sample['image'], sample['label'], sample['gt']
         if self.with_sdf:
@@ -88,14 +87,13 @@ class RandomRotate_2D(object):
         self.cval = cval
     def __call__(self, sample):
         image, label, gt = sample['image'], sample['label'], sample['gt']
-        angle = np.random.randint(-20,20)#返回范围内的整数值
+        angle = np.random.randint(-20,20)
         image = ndimage.rotate(image, angle, order=0, reshape=False)
         label = ndimage.rotate(label, angle, order=0, reshape=False, mode="constant", cval=self.cval)
         gt = ndimage.rotate(gt, angle, order=0, reshape=False, mode="constant", cval=0)
-        #'costant' 通过使用cval参数定义的相同常量值填充边之外的所有值来扩展输入。mode默认是'constant'。在输入边之外不执行插值。Cval默认是0
         return {'image': image, 'label': label, 'gt':gt}
 
-def random_rot_flip(image, label,gt):#随机旋转90, 翻转， 2d
+def random_rot_flip(image, label,gt):
     k = np.random.randint(0, 4)
     image = np.rot90(image, k)
     label = np.rot90(label, k)
@@ -115,7 +113,7 @@ def random_rotate(image, label, gt, cval): #2d
     gt = ndimage.rotate(gt, angle, order=0, reshape=False, mode="constant", cval=0)
     return image, label, gt
 
-class RandomGenerator(object): #按照ACDC_WSL改的,2d
+class RandomGenerator(object): #2d
     def __init__(self, output_size, num_classes):
         self.output_size = output_size
         self.num_classes= num_classes
@@ -139,7 +137,7 @@ class RandomGenerator(object): #按照ACDC_WSL改的,2d
         sample = {"image": image, "label": label, "gt":gt}
         return sample
     
-class RandomGenerator4Abdomen(object): #只有resize, for abdomen,2d
+class RandomGenerator4Abdomen(object):
     def __init__(self, output_size, num_classes):
         self.output_size = output_size
         self.num_classes= num_classes

@@ -34,7 +34,7 @@ class UNETR_2dual(nn.Module):
         out_channels: int,
         img_size: Tuple[int, int, int],
         feature_size: int = 16, 
-        hidden_size: int = 768, #为啥hidden size比feature_size大？
+        hidden_size: int = 768, 
 
         mlp_dim: int = 3072,
         num_heads: int = 12,
@@ -80,7 +80,7 @@ class UNETR_2dual(nn.Module):
         if pos_embed not in ["conv", "perceptron"]:
             raise KeyError(f"Position embedding layer of type {pos_embed} is not supported.")
 
-        self.num_layers = 12 #Vit的层数？
+        self.num_layers = 12 
         self.patch_size = (16, 16, 16)
         self.feat_size = (
             img_size[0] // self.patch_size[0],
@@ -256,7 +256,7 @@ class UNETR_2dual(nn.Module):
             self.vit.norm.bias.copy_(weights["state_dict"]["module.transformer.norm.bias"])
 
     def forward(self, x_in):
-        x, hidden_states_out = self.vit(x_in)#x应该是transformer获取的全局信息
+        x, hidden_states_out = self.vit(x_in)#x maybe the global information obtained by transformer
         enc1 = self.encoder1(x_in)
         x2 = hidden_states_out[3]
         enc2 = self.encoder2(self.proj_feat(x2, self.hidden_size, self.feat_size))

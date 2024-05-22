@@ -5,7 +5,7 @@ import numpy as np
 from numpy import *
 import logging
 import glob
-from collections import defaultdict # 嵌套字典的使用
+from collections import defaultdict 
 import pandas as pd
 import h5py
 import copy
@@ -17,7 +17,6 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 data_root = "/mnt/data/HM/Datasets/ACDC2017/ACDC"
 # data_root = "/mnt/data/HM/Datasets/ACDC2017/ACDC_resample"
 
-"""scribble_less指的是处理过长度后的scribble, 质量更差"""
 
 def show_images_info(img_dir ="train"):
     input_root = data_root
@@ -31,8 +30,8 @@ def show_images_info(img_dir ="train"):
 
     info_img_dir = input_root + "/" + img_dir + "/images"
 
-    # img_names = sorted(os.listdir(info_img_dir)) # 只是类似word_0002.nii.gz这样集合的list
-    ori_img_path = sorted(glob.glob(info_img_dir + "/*.nii.gz")) #path集合的list
+    # img_names = sorted(os.listdir(info_img_dir)) 
+    ori_img_path = sorted(glob.glob(info_img_dir + "/*.nii.gz")) 
     image_num = 0
     z_min = 1000
     z_max = 0
@@ -126,7 +125,7 @@ def deal_dataSet_to_volumes(subdir = "train"):#for volumes
         image = sitk.GetArrayFromImage(image_itk)
 
     
-        scribble_path = case.replace("labels", "scribbles_rlessd16").replace("_gt","_scribble")#前一个是文件名，后面是case名
+        scribble_path = case.replace("labels", "scribbles_rlessd16").replace("_gt","_scribble")
         scribble_itk = sitk.ReadImage(scribble_path)
         scribble = sitk.GetArrayFromImage(scribble_itk)
 
@@ -152,7 +151,7 @@ def write_images_nametxt(subdir = "train"):
     # img_dir = subdir + "_volumes"
     img_dir = subdir + "rlessdf16" + "_slices" #trainfor2D orless8_slices
     info_img_dir = input_root + "/" + img_dir 
-    img_names = sorted(os.listdir(info_img_dir)) # 只是类似word_0002.nii.gz这样集合的list
+    img_names = sorted(os.listdir(info_img_dir)) # 
 
     if subdir == "train":
         name = img_dir.split("_")[0]
@@ -203,7 +202,7 @@ def deal_dataSet_to_slices(subdir = "train"):
         for slice_ind in range(image.shape[0]):
             f = h5py.File(save_sub_dir + '/{}_slice_{}.h5'.format(item_name, slice_ind), 'w')
             f.create_dataset(
-                'image', data=image[slice_ind], compression="gzip")#压缩成gzip的形式
+                'image', data=image[slice_ind], compression="gzip")
             f.create_dataset('label', data=label[slice_ind], compression="gzip")
             if subdir =="train":
                 f.create_dataset('scribble', data=scribble[slice_ind], compression ="gzip")
@@ -235,11 +234,11 @@ def image_resample(subdir = "train"):
             direction = img_obj.GetDirection()
             input_size = img_obj.GetSize()
 
-            output_spacing = [1.0,1.0,1.0] #更改空间插值
+            output_spacing = [1.0,1.0,1.0] 
             output_size = [int((input_size[i] * spacing[i]) / output_spacing[i]) for i in range(3)]
             transform = sitk.Transform(3, sitk.sitkIdentity) #what's mean?
 
-            interp = sitk.sitkLinear if "images" in sub_dir else sitk.sitkNearestNeighbor #是Im是线性插值，是label是最近邻插值
+            interp = sitk.sitkLinear if "images" in sub_dir else sitk.sitkNearestNeighbor 
             resampled_img = sitk.Resample(img_obj, output_size, transform,
                 interp, origin, output_spacing, direction)
             sitk.WriteImage(resampled_img, output_dir + '/' + img_name)

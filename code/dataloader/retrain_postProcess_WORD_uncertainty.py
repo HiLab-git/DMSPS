@@ -89,7 +89,7 @@ def write_images_nametxt(flag, subdir = "Tr"):
     
     img_dir = subdir + flag
     info_img_dir = input_root + "/" + img_dir
-    img_names = sorted(os.listdir(info_img_dir)) # 只是类似word_0002.nii.gz这样集合的list
+    img_names = sorted(os.listdir(info_img_dir)) 
     txtname = flag.replace("_volumes","") 
 
     f = open(output_info_dir + "/" + txtname +".txt", "w")

@@ -5,7 +5,7 @@ import numpy as np
 from numpy import *
 import logging
 import glob
-from collections import defaultdict # 嵌套字典的使用
+from collections import defaultdict 
 import pandas as pd
 import h5py
 import copy
@@ -19,7 +19,7 @@ img_dirs = ["t1", "t1ce", "t2", "flair"]
 def convert_BraTSLabel_into2():
     # img_names_root  = sorted(glob.glob(data_root +"BraTS20*"))
     # print(img_names_root)
-    seg_data_path = sorted(glob.glob(data_root + "/*_seg.nii.gz" ))#369个
+    seg_data_path = sorted(glob.glob(data_root + "/*_seg.nii.gz" ))#369 cases
     # print(len(seg_data_path))
 
     for item in seg_data_path:
@@ -130,9 +130,9 @@ def show_preBraTS_image_info():
                         format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
     logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-    info_img_dir = input_root + "/" + img_dirs[0] #以t1为例
+    info_img_dir = input_root + "/" + img_dirs[0] # take t1 as example
     print("info_img_dir:{}".format(info_img_dir))
-    ori_img_path = sorted(glob.glob(info_img_dir + "/*.nii.gz")) #path集合的list
+    ori_img_path = sorted(glob.glob(info_img_dir + "/*.nii.gz")) 
     image_num = 0
     z_min = 10000
     z_max = 0
@@ -280,7 +280,7 @@ def deal_all_preBraTS_to_volumes():
         print("#########################")
     print("Convert all BraTS2020 data to volumes, total {} volumes".format(volume_num)) #total 369 volumes
 
-def write_images_nametxt_volumes(): #打算70，15，15分配
+def write_images_nametxt_volumes(): #70，15，15
     output_info_dir = predata_root
     info_data_dir = predata_root + "/Volumes"
     data_list = sorted(os.listdir(info_data_dir))

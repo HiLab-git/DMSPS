@@ -77,7 +77,7 @@ def weight_with_uncertainty_class_np(preds, C):#pred:numpy, [n, c, d, h, w]
     uncertainty = -1.0 * np.sum(preds * np.log(preds + 1e-16), axis=1, keepdims=True)/ np.log(C)
     return uncertainty
 
-def calculate_metric_percase(pred, gt, spacing):#计算指标矩阵
+def calculate_metric_percase(pred, gt, spacing):
     pred[pred > 0] = 1
     gt[gt > 0] = 1
     if pred.sum() > 0 and gt.sum() > 0:

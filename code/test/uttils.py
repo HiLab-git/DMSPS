@@ -20,11 +20,11 @@ def calculate_metric_percase(pred, gt, spacing):
 
 def logInference(metric_onTest_all_list):
     metric_onTest_all_list = np.asarray(metric_onTest_all_list)  
-    avg_metric_on_list = np.mean(metric_onTest_all_list,axis=0)#计算了30个数据的各器官各标签均值，得到16 * 3.
+    avg_metric_on_list = np.mean(metric_onTest_all_list,axis=0)
     logging.info("avg metric of each organ[dsc,asd,hd95]:".format(avg_metric_on_list))
     metricOf3 = np.mean(avg_metric_on_list,axis=0)
     logging.info("mean metric of all[dice,asd,hd95]:{}".format(metricOf3))
-    std = np.std(metric_onTest_all_list,axis = 0)#变成16*3
+    std = np.std(metric_onTest_all_list,axis = 0)
     logging.info("std of each organ[dice,asd,hd95]:{}".format(std))
     std_1= np.mean(std,axis=0)
     logging.info("std of all[dsc,asd,hd95]:{}\n\n".format(std_1))
@@ -50,7 +50,7 @@ def get_the_first_k_largest_components(image, k = 1): #image is binary map
     sizes_sorted = sorted(list(sizes))
     output = np.zeros_like(image, np.uint8)
     for i in range(k):
-        max_i_label = np.where(sizes == sizes_sorted[-1-i])[0] + 1 #为1
+        max_i_label = np.where(sizes == sizes_sorted[-1-i])[0] + 1 
         output = output + np.asarray(labeled_array == max_i_label, np.uint8)
     return  output
 

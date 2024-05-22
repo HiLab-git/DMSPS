@@ -13,9 +13,8 @@ import torch.nn as nn
 #from pymic.net.net2d.unet2d import *
 import sys
 import os
-#调用上级
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #当前程序上上一级目录
-sys.path.append(BASE_DIR) #添加环境变量
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+sys.path.append(BASE_DIR) 
 from networks.unet import *
 
 def Dropout(x, p=0.5):
@@ -23,7 +22,7 @@ def Dropout(x, p=0.5):
     return x
 
 class NestedUNet2D_2dual(nn.Module):
-    def __init__(self, in_chns,class_num):#本来是params作为参数的
+    def __init__(self, in_chns,class_num):
         super(NestedUNet2D_2dual, self).__init__()
         # self.params  = params
         # self.in_chns = self.params['in_chns']

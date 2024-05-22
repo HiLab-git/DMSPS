@@ -8,7 +8,7 @@ import scipy.ndimage as nd
 
 
 
-def recursive_glob(rootdir='.', suffix=''): #递归的glob
+def recursive_glob(rootdir='.', suffix=''):
     """Performs recursive glob with given suffix and rootdir
         :param rootdir is the root directory
         :param suffix is the suffix to be searched
@@ -184,7 +184,7 @@ def get_dice(pred, gt):
 
     return total_dice
 
-def get_mc_dice(pred, gt, num=2): #好像是计算每个class的dice
+def get_mc_dice(pred, gt, num=2):
     # num is the total number of classes, include the background
     total_dice = np.zeros(num-1)
     pred = pred.long()
