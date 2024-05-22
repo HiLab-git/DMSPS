@@ -17,8 +17,8 @@ train_scri_dir = "train/scribbles"#140
 valid_scri_dir = "val/scribbles"#30
 
 def get_largest_connectted_component(binary_map):
-    s = ndimage.generate_binary_structure(2,1) #4联通
-    # s = ndimage.generate_binary_structure(2,2) # 8联通
+    s = ndimage.generate_binary_structure(2,1) #4
+    # s = ndimage.generate_binary_structure(2,2) # 8
     labeled_array,num_features = ndimage.label(binary_map, s)
     if num_features == 0:
         return np.zeros_like(binary_map)
@@ -26,13 +26,13 @@ def get_largest_connectted_component(binary_map):
     counts = np.bincount(labeled_array.flatten())[1:]
     if len(counts) == 0:
         return np.zeros_like(binary_map)
-    max_label = labels[np.argmax(counts)] #使用 np.bincount() 函数统计标记后的图像中每个连通域的像素数量，并找到像素数量最多的连通域的标记值 max_label。
+    max_label = labels[np.argmax(counts)] 
     max_component = np.zeros_like(labeled_array)
     max_component[labeled_array == max_label] = 1
     return max_component
 
 
-def reduce_volume_judgeByAbsoluteLength(binary_matrix, reduce_num = 1/2): #保留最大连通域
+def reduce_volume_judgeByAbsoluteLength(binary_matrix, reduce_num = 1/2): 
     # Find connected regions in the binary matrix
     regions = label(binary_matrix)
     # Iterate through each connected region
@@ -50,9 +50,9 @@ def reduce_volume_judgeByAbsoluteLength(binary_matrix, reduce_num = 1/2): #保�
         print("center_row:{}, center_col:{}".format(center_row, center_col))
 
         if abs(min_row-max_row)>abs(min_col-max_col):
-            binary_matrix[min_row:center_row, :] = 0 #保留右边的领域
+            binary_matrix[min_row:center_row, :] = 0 #leave the right area
         else:
-            binary_matrix[:, min_col:center_col] = 0 #保留下面的领域
+            binary_matrix[:, min_col:center_col] = 0 #leave the bottom area
         binary_matrix = get_largest_connectted_component(binary_matrix)
     return binary_matrix   
 
