@@ -37,24 +37,22 @@ np.random.seed(seed)
 random.seed(seed)
 
 
-def random_rotation(image, max_angle=15):#生成随机角度
+def random_rotation(image, max_angle=15):
     angle = np.random.uniform(-max_angle, max_angle)
     img = Image.fromarray(image)
     img_rotate = img.rotate(angle)
     return img_rotate
 
 
-def translate_img(img, x_shift, y_shift):#仿射变换
+def translate_img(img, x_shift, y_shift):
 
     (height, width) = img.shape[:2]
     matrix = np.float32([[1, 0, x_shift], [0, 1, y_shift]])
     trans_img = cv2.warpAffine(img, matrix, (width, height))
-    #cv2.warpAffine仿射变换； img输入图像，matrix 变换矩阵，
-    # (w,h)共同组成dsize参数，表示输出图像的大小
     return trans_img
 
 
-def get_largest_two_component_2D(img, print_info=False, threshold=None):#获得2d图像的两个最大连通图
+def get_largest_two_component_2D(img, print_info=False, threshold=None):
     """
     Get the largest two components of a binary volume
     inputs:
@@ -63,8 +61,8 @@ def get_largest_two_component_2D(img, print_info=False, threshold=None):#获得2
     outputs:
         out_img: the output volume 
     """
-    s = ndimage.generate_binary_structure(2, 2)  # iterate structure
-    labeled_array, numpatches = ndimage.label(img, s)  # labeling
+    s = ndimage.generate_binary_structure(2, 2)  
+    labeled_array, numpatches = ndimage.label(img, s)  
     sizes = ndimage.sum(img, labeled_array, range(1, numpatches+1))
     sizes_list = [sizes[i] for i in range(len(sizes))]
     sizes_list.sort()
@@ -79,9 +77,9 @@ def get_largest_two_component_2D(img, print_info=False, threshold=None):#获得2
             if max_label1.shape[0] > 1:
                 max_label1 = max_label1[0]
             component1 = labeled_array == max_label1
-            out_img = [component1] #最大连通域
+            out_img = [component1] 
             for temp_size in sizes_list:
-                if(temp_size > threshold):#将超过阈值的连通域加入
+                if(temp_size > threshold):
                     temp_lab = np.where(sizes == temp_size)[0] + 1
                     temp_cmp = labeled_array == temp_lab[0]
                     out_img.append(temp_cmp)
@@ -98,7 +96,7 @@ def get_largest_two_component_2D(img, print_info=False, threshold=None):#获得2
             component1 = labeled_array == max_label1
             component2 = labeled_array == max_label2
             if(max_size2*10 > max_size1):
-                out_img = [component1, component2]#对第二大的连通域还是有约束的。
+                out_img = [component1, component2]
             else:
                 out_img = [component1]
     return out_img
@@ -144,7 +142,7 @@ class Cutting_branch(object):
         else:
             return False
 
-    def __detect_neighbor_bifur_state(self, lab, pt):#递归，看不懂，大概是找连接区域？
+    def __detect_neighbor_bifur_state(self, lab, pt):
         directions = []
         for i in range(9):
             if i == 4:
@@ -182,7 +180,7 @@ class Cutting_branch(object):
         self.previous_bifurPts = []
         self.output = np.zeros_like(lab)
         self.lst_output = np.zeros_like(lab)
-        components = get_largest_two_component_2D(lab, threshold=15)#将超过15大小的连通域都得到
+        components = get_largest_two_component_2D(lab, threshold=15)
         if len(components) > 1:
             for c in components:
                 start = self.__find_start(c)
@@ -198,7 +196,7 @@ class Cutting_branch(object):
         shift_y = random.randint(-6, 6)
         shift_x = random.randint(-6, 6)
         if np.sum(seg_lab) > 1000:
-            output = translate_img(output.astype(np.uint8), shift_x, shift_y)#变换，变换的知识我不是很懂
+            output = translate_img(output.astype(np.uint8), shift_x, shift_y)
             output = random_rotation(output)
         output = output * seg_lab
         return output
@@ -269,7 +267,7 @@ def scrible_2d_PerNSclices(label, interNum, iteration=[4, 10]):
 
 
 def scribble4class_PerNSclices(label, class_id, class_num, interNum, iteration=[4, 10], cut_branch=True):
-    label = (label == class_id) # 选出当前的class，返回[0 1]图
+    label = (label == class_id) 
     sk_map = scrible_2d_PerNSclices(label, interNum, iteration=iteration)
     if cut_branch and class_id != 0:
         cut = Cutting_branch()
@@ -285,7 +283,7 @@ def scribble4class_PerNSclices(label, class_id, class_num, interNum, iteration=[
 def generate_scribble_PerNSclices(label, interNum, iterations, cut_branch=True):
     class_num = np.max(label) + 1
     output = np.zeros_like(label, dtype=np.uint8)
-    for i in range(class_num): #一个一个器官进行scribble生成
+    for i in range(class_num):
         it = iterations[i] if isinstance(iterations, list) else iterations
         scribble = scribble4class_PerNSclices(
             label, i, class_num, interNum, it, cut_branch=cut_branch)
@@ -313,7 +311,7 @@ if __name__ == "__main__":
         label = sitk.GetArrayFromImage(itk_data)
         # num_classes = 3
         num_classes = 8
-        output = generate_scribble_PerNSclices(label, interval_layer+1, tuple([1, num_classes-1]))#隔1层是2，隔3层步长是4
+        output = generate_scribble_PerNSclices(label, interval_layer+1, tuple([1, num_classes-1]))
         output[output == 0] = 255  # ignore index
         output[output == num_classes] = 0
         itk_scr = sitk.GetImageFromArray(output)
@@ -321,7 +319,7 @@ if __name__ == "__main__":
         # sitk.WriteImage(itk_scr, i.replace('_lab.nii.gz', '_scribble.nii.gz'))
         # output_path = i.replace('label', 'scribble')
         
-        sitk.WriteImage(itk_scr, i.replace('labels', 'scribblesPer'+str(interval_layer)))#保存图片，保存路径
+        sitk.WriteImage(itk_scr, i.replace('labels', 'scribblesPer'+str(interval_layer)))
         print("{} End".format(i.split("/")[-1]))
         print(num)
         num += 1
