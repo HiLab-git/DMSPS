@@ -9,12 +9,12 @@ import matplotlib.pyplot as plt
  
 def draw_CAM(model, img_path, save_path, transform=None, visual_heatmap=False):
     '''
-    绘制 Class Activation Map
-    :param model: 加载好权重的Pytorch model
-    :param img_path: 测试图片路径
-    :param save_path: CAM结果保存路径
-    :param transform: 输入图像预处理方法
-    :param visual_heatmap: 是否可视化原始heatmap（调用matplotlib）
+    draw Class Activation Map
+    :param model: load Pytorch model
+    :param img_path: test iamge path
+    :param save_path: save path
+    :param transform: Input image preprocessing method
+    :param visual_heatmap: Whether to visualize the original heatmap (calling matplotlib)
     :return:
     '''
     img = Image.open(img_path).convert('RGB')

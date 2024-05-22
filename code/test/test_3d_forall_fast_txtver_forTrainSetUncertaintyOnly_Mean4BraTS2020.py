@@ -193,7 +193,7 @@ def Inference(FLAGS, test_save_path):
     logging.info("init weight from {}".format(save_mode_path))
     net.eval() 
 
-    metric_onTest_all_list1 = [] #保存所有数据的列表
+    metric_onTest_all_list1 = [] 
     metric_onTest_all_list2 = []
     metric_onTest_all_list3 = []
     metric_onTest_all_list4 = []
