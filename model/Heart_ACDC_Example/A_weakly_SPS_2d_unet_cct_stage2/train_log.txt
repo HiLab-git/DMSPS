@@ -1,0 +1,760 @@
+[20:17:19.256] Namespace(base_lr=0.01, batch_size=24, data_name='ACDC', data_type='HeartM', deterministic=1, exp='A3_weakly_PLS_2d', fold='v2_softcel8_ReUnmC_T01_0919', max_iterations=30000, model='unet_cct', num_classes=4, patch_size=[256, 256], root_path='/mnt/data/HM/Datasets/ACDC2017/ACDC_for2D', seed=2022, sup_type='pseudoLab', trainData='traincel8_0805_ReUnmC_T01.txt', validData='valid.txt')
+[20:17:21.903] 57 iterations per epoch
+[20:17:21.903] max epoch: 527
+[20:18:06.018] iteration 200 : loss : 5.980419, loss_ce: 0.010719, loss_pse_sup_soft: 0.746212, alpha: 0.093016
+[20:18:08.007] avg_metric:[[0.87648669]
+ [0.86441801]
+ [0.91557202]] 
+[20:18:08.007] iteration 200 : dice_score : 0.885492 
+[20:18:52.350] iteration 400 : loss : 5.975521, loss_ce: 0.009182, loss_pse_sup_soft: 0.745792, alpha: 0.438119
+[20:18:54.253] avg_metric:[[0.8790981]
+ [0.8622422]
+ [0.9188567]] 
+[20:18:54.253] iteration 400 : dice_score : 0.886732 
+[20:19:39.463] iteration 600 : loss : 5.973123, loss_ce: 0.007948, loss_pse_sup_soft: 0.745647, alpha: 0.547861
+[20:19:41.372] avg_metric:[[0.88264731]
+ [0.86838387]
+ [0.92509959]] 
+[20:19:41.373] iteration 600 : dice_score : 0.892044 
+[20:20:27.841] iteration 800 : loss : 5.974387, loss_ce: 0.009179, loss_pse_sup_soft: 0.745651, alpha: 0.023007
+[20:20:29.768] avg_metric:[[0.87576711]
+ [0.86459041]
+ [0.917671  ]] 
+[20:20:29.769] iteration 800 : dice_score : 0.886010 
+[20:21:15.902] iteration 1000 : loss : 5.974164, loss_ce: 0.008717, loss_pse_sup_soft: 0.745681, alpha: 0.060510
+[20:21:17.578] avg_metric:[[0.88161784]
+ [0.86495535]
+ [0.92237368]] 
+[20:21:17.578] iteration 1000 : dice_score : 0.889649 
+[20:22:04.662] iteration 1200 : loss : 5.974434, loss_ce: 0.009525, loss_pse_sup_soft: 0.745614, alpha: 0.511315
+[20:22:06.656] avg_metric:[[0.88116373]
+ [0.86310259]
+ [0.91984403]] 
+[20:22:06.657] iteration 1200 : dice_score : 0.888037 
+[20:22:53.159] iteration 1400 : loss : 5.977764, loss_ce: 0.009827, loss_pse_sup_soft: 0.745992, alpha: 0.691276
+[20:22:54.970] avg_metric:[[0.87493082]
+ [0.86300739]
+ [0.91695604]] 
+[20:22:54.971] iteration 1400 : dice_score : 0.884965 
+[20:23:42.113] iteration 1600 : loss : 5.975539, loss_ce: 0.009603, loss_pse_sup_soft: 0.745742, alpha: 0.057457
+[20:23:44.042] avg_metric:[[0.88256801]
+ [0.86106848]
+ [0.92027461]] 
+[20:23:44.043] iteration 1600 : dice_score : 0.887970 
+[20:24:30.546] iteration 1800 : loss : 5.976646, loss_ce: 0.009253, loss_pse_sup_soft: 0.745924, alpha: 0.985193
+[20:24:32.334] avg_metric:[[0.88140669]
+ [0.86415383]
+ [0.92441151]] 
+[20:24:32.335] iteration 1800 : dice_score : 0.889991 
+[20:25:19.475] iteration 2000 : loss : 5.972576, loss_ce: 0.008662, loss_pse_sup_soft: 0.745489, alpha: 0.782608
+[20:25:21.324] avg_metric:[[0.87958944]
+ [0.8645342 ]
+ [0.92080845]] 
+[20:25:21.325] iteration 2000 : dice_score : 0.888311 
+[20:26:07.661] iteration 2200 : loss : 5.978781, loss_ce: 0.010780, loss_pse_sup_soft: 0.746000, alpha: 0.328230
+[20:26:09.629] avg_metric:[[0.87795635]
+ [0.86392782]
+ [0.92198619]] 
+[20:26:09.630] iteration 2200 : dice_score : 0.887957 
+[20:26:57.040] iteration 2400 : loss : 5.973535, loss_ce: 0.008143, loss_pse_sup_soft: 0.745674, alpha: 0.703715
+[20:26:58.945] avg_metric:[[0.87972124]
+ [0.86355346]
+ [0.92058474]] 
+[20:26:58.946] iteration 2400 : dice_score : 0.887953 
+[20:27:45.271] iteration 2600 : loss : 5.973924, loss_ce: 0.008615, loss_pse_sup_soft: 0.745664, alpha: 0.381020
+[20:27:47.151] avg_metric:[[0.88146744]
+ [0.86340721]
+ [0.92342846]] 
+[20:27:47.151] iteration 2600 : dice_score : 0.889434 
+[20:28:34.213] iteration 2800 : loss : 5.972441, loss_ce: 0.008206, loss_pse_sup_soft: 0.745529, alpha: 0.049184
+[20:28:36.170] avg_metric:[[0.88249671]
+ [0.86431812]
+ [0.92770861]] 
+[20:28:36.171] iteration 2800 : dice_score : 0.891508 
+[20:29:22.657] iteration 3000 : loss : 5.970676, loss_ce: 0.007759, loss_pse_sup_soft: 0.745365, alpha: 0.051762
+[20:29:24.582] avg_metric:[[0.88172917]
+ [0.8654791 ]
+ [0.92633398]] 
+[20:29:24.583] iteration 3000 : dice_score : 0.891181 
+[20:30:11.650] iteration 3200 : loss : 5.977510, loss_ce: 0.009787, loss_pse_sup_soft: 0.745965, alpha: 0.085885
+[20:30:13.860] avg_metric:[[0.88399776]
+ [0.86773758]
+ [0.92831363]] 
+[20:30:13.861] iteration 3200 : dice_score : 0.893350 
+[20:31:00.147] iteration 3400 : loss : 5.973048, loss_ce: 0.009618, loss_pse_sup_soft: 0.745429, alpha: 0.889961
+[20:31:01.944] avg_metric:[[0.88130195]
+ [0.86475923]
+ [0.92611142]] 
+[20:31:01.946] iteration 3400 : dice_score : 0.890724 
+[20:31:48.823] iteration 3600 : loss : 5.973029, loss_ce: 0.007403, loss_pse_sup_soft: 0.745703, alpha: 0.750462
+[20:31:50.584] avg_metric:[[0.88229106]
+ [0.86556787]
+ [0.92601532]] 
+[20:31:50.585] iteration 3600 : dice_score : 0.891291 
+[20:32:36.929] iteration 3800 : loss : 5.977376, loss_ce: 0.010569, loss_pse_sup_soft: 0.745851, alpha: 0.788061
+[20:32:38.624] avg_metric:[[0.88195165]
+ [0.86689012]
+ [0.9289291 ]] 
+[20:32:38.625] iteration 3800 : dice_score : 0.892590 
+[20:33:25.559] iteration 4000 : loss : 5.975507, loss_ce: 0.008650, loss_pse_sup_soft: 0.745857, alpha: 0.403655
+[20:33:27.291] avg_metric:[[0.88070069]
+ [0.86500088]
+ [0.92648523]] 
+[20:33:27.293] iteration 4000 : dice_score : 0.890729 
+[20:34:13.617] iteration 4200 : loss : 5.976439, loss_ce: 0.009084, loss_pse_sup_soft: 0.745919, alpha: 0.152091
+[20:34:15.487] avg_metric:[[0.88271776]
+ [0.86758121]
+ [0.93004255]] 
+[20:34:15.488] iteration 4200 : dice_score : 0.893447 
+[20:35:02.358] iteration 4400 : loss : 5.973740, loss_ce: 0.007970, loss_pse_sup_soft: 0.745721, alpha: 0.722330
+[20:35:04.185] avg_metric:[[0.8847908 ]
+ [0.86724955]
+ [0.92888944]] 
+[20:35:04.185] iteration 4400 : dice_score : 0.893643 
+[20:35:50.580] iteration 4600 : loss : 5.974013, loss_ce: 0.009121, loss_pse_sup_soft: 0.745612, alpha: 0.026087
+[20:35:52.316] avg_metric:[[0.8839157 ]
+ [0.86517786]
+ [0.92796234]] 
+[20:35:52.317] iteration 4600 : dice_score : 0.892352 
+[20:36:39.129] iteration 4800 : loss : 5.982628, loss_ce: 0.010582, loss_pse_sup_soft: 0.746506, alpha: 0.929736
+[20:36:40.855] avg_metric:[[0.88231275]
+ [0.86543873]
+ [0.92994088]] 
+[20:36:40.856] iteration 4800 : dice_score : 0.892564 
+[20:37:27.151] iteration 5000 : loss : 5.974837, loss_ce: 0.008344, loss_pse_sup_soft: 0.745812, alpha: 0.212928
+[20:37:28.878] avg_metric:[[0.88212305]
+ [0.86748275]
+ [0.92849869]] 
+[20:37:28.879] iteration 5000 : dice_score : 0.892701 
+[20:37:28.927] save model to ../../model/HeartM_ACDC/A3_weakly_PLS_2d_unet_cct_v2_softcel8_ReUnmC_T01_0919/iter_5000.pth
+[20:38:15.624] iteration 5200 : loss : 5.976008, loss_ce: 0.008462, loss_pse_sup_soft: 0.745943, alpha: 0.399972
+[20:38:17.457] avg_metric:[[0.88155832]
+ [0.8677833 ]
+ [0.92658678]] 
+[20:38:17.458] iteration 5200 : dice_score : 0.891976 
+[20:39:03.724] iteration 5400 : loss : 5.974431, loss_ce: 0.009059, loss_pse_sup_soft: 0.745671, alpha: 0.965603
+[20:39:05.913] avg_metric:[[0.88352966]
+ [0.86878693]
+ [0.93050166]] 
+[20:39:05.913] iteration 5400 : dice_score : 0.894273 
+[20:39:52.633] iteration 5600 : loss : 5.975401, loss_ce: 0.008971, loss_pse_sup_soft: 0.745804, alpha: 0.551517
+[20:39:54.407] avg_metric:[[0.88107648]
+ [0.86758739]
+ [0.92795226]] 
+[20:39:54.409] iteration 5600 : dice_score : 0.892205 
+[20:40:40.747] iteration 5800 : loss : 5.974850, loss_ce: 0.008329, loss_pse_sup_soft: 0.745815, alpha: 0.565185
+[20:40:42.751] avg_metric:[[0.87856663]
+ [0.8672463 ]
+ [0.92495468]] 
+[20:40:42.752] iteration 5800 : dice_score : 0.890256 
+[20:41:29.603] iteration 6000 : loss : 5.973795, loss_ce: 0.009506, loss_pse_sup_soft: 0.745536, alpha: 0.372450
+[20:41:31.386] avg_metric:[[0.88005137]
+ [0.8669711 ]
+ [0.92625654]] 
+[20:41:31.387] iteration 6000 : dice_score : 0.891093 
+[20:42:17.776] iteration 6200 : loss : 5.972259, loss_ce: 0.008855, loss_pse_sup_soft: 0.745426, alpha: 0.157151
+[20:42:19.870] avg_metric:[[0.87679815]
+ [0.86447473]
+ [0.92167732]] 
+[20:42:19.871] iteration 6200 : dice_score : 0.887650 
+[20:43:06.508] iteration 6400 : loss : 5.978344, loss_ce: 0.009578, loss_pse_sup_soft: 0.746096, alpha: 0.410799
+[20:43:08.457] avg_metric:[[0.88044735]
+ [0.86670866]
+ [0.92501892]] 
+[20:43:08.458] iteration 6400 : dice_score : 0.890725 
+[20:43:54.555] iteration 6600 : loss : 5.974486, loss_ce: 0.008346, loss_pse_sup_soft: 0.745767, alpha: 0.912722
+[20:43:56.515] avg_metric:[[0.88078718]
+ [0.86815721]
+ [0.92901894]] 
+[20:43:56.516] iteration 6600 : dice_score : 0.892654 
+[20:44:42.987] iteration 6800 : loss : 5.975307, loss_ce: 0.008932, loss_pse_sup_soft: 0.745797, alpha: 0.732540
+[20:44:45.022] avg_metric:[[0.87858835]
+ [0.86660343]
+ [0.92451621]] 
+[20:44:45.023] iteration 6800 : dice_score : 0.889903 
+[20:45:30.839] iteration 7000 : loss : 5.979308, loss_ce: 0.010417, loss_pse_sup_soft: 0.746111, alpha: 0.547269
+[20:45:32.878] avg_metric:[[0.88162865]
+ [0.86811028]
+ [0.92585982]] 
+[20:45:32.879] iteration 7000 : dice_score : 0.891866 
+[20:46:19.521] iteration 7200 : loss : 5.973737, loss_ce: 0.008199, loss_pse_sup_soft: 0.745692, alpha: 0.477678
+[20:46:21.575] avg_metric:[[0.88091223]
+ [0.86554848]
+ [0.92586594]] 
+[20:46:21.576] iteration 7200 : dice_score : 0.890776 
+[20:47:07.734] iteration 7400 : loss : 5.973521, loss_ce: 0.008808, loss_pse_sup_soft: 0.745589, alpha: 0.026709
+[20:47:09.666] avg_metric:[[0.88127394]
+ [0.86626407]
+ [0.9276795 ]] 
+[20:47:09.666] iteration 7400 : dice_score : 0.891739 
+[20:47:56.260] iteration 7600 : loss : 5.976016, loss_ce: 0.008697, loss_pse_sup_soft: 0.745915, alpha: 0.237706
+[20:47:58.101] avg_metric:[[0.88118941]
+ [0.86831918]
+ [0.92848493]] 
+[20:47:58.102] iteration 7600 : dice_score : 0.892665 
+[20:48:44.286] iteration 7800 : loss : 5.975284, loss_ce: 0.009441, loss_pse_sup_soft: 0.745730, alpha: 0.874727
+[20:48:46.286] avg_metric:[[0.8819771 ]
+ [0.8661154 ]
+ [0.92605702]] 
+[20:48:46.288] iteration 7800 : dice_score : 0.891383 
+[20:49:33.119] iteration 8000 : loss : 5.972620, loss_ce: 0.008280, loss_pse_sup_soft: 0.745542, alpha: 0.082410
+[20:49:35.140] avg_metric:[[0.88153416]
+ [0.86851878]
+ [0.92924493]] 
+[20:49:35.141] iteration 8000 : dice_score : 0.893099 
+[20:50:21.100] iteration 8200 : loss : 5.971004, loss_ce: 0.007506, loss_pse_sup_soft: 0.745437, alpha: 0.676088
+[20:50:23.178] avg_metric:[[0.88231006]
+ [0.86725528]
+ [0.92579981]] 
+[20:50:23.179] iteration 8200 : dice_score : 0.891788 
+[20:51:09.845] iteration 8400 : loss : 5.975394, loss_ce: 0.008636, loss_pse_sup_soft: 0.745845, alpha: 0.806474
+[20:51:12.119] avg_metric:[[0.88088812]
+ [0.86692066]
+ [0.92459329]] 
+[20:51:12.120] iteration 8400 : dice_score : 0.890801 
+[20:51:58.376] iteration 8600 : loss : 5.969532, loss_ce: 0.007800, loss_pse_sup_soft: 0.745216, alpha: 0.353954
+[20:52:00.185] avg_metric:[[0.88146526]
+ [0.86694093]
+ [0.92864443]] 
+[20:52:00.186] iteration 8600 : dice_score : 0.892350 
+[20:52:46.884] iteration 8800 : loss : 5.976654, loss_ce: 0.009375, loss_pse_sup_soft: 0.745910, alpha: 0.020247
+[20:52:48.862] avg_metric:[[0.88250554]
+ [0.86849115]
+ [0.92812522]] 
+[20:52:48.863] iteration 8800 : dice_score : 0.893041 
+[20:53:35.250] iteration 9000 : loss : 5.975565, loss_ce: 0.009305, loss_pse_sup_soft: 0.745782, alpha: 0.044747
+[20:53:37.087] avg_metric:[[0.88199957]
+ [0.86566749]
+ [0.92704433]] 
+[20:53:37.087] iteration 9000 : dice_score : 0.891570 
+[20:54:23.932] iteration 9200 : loss : 5.975513, loss_ce: 0.008397, loss_pse_sup_soft: 0.745890, alpha: 0.582162
+[20:54:25.811] avg_metric:[[0.88128779]
+ [0.86826833]
+ [0.92698324]] 
+[20:54:25.813] iteration 9200 : dice_score : 0.892180 
+[20:55:12.126] iteration 9400 : loss : 5.975313, loss_ce: 0.009687, loss_pse_sup_soft: 0.745703, alpha: 0.685391
+[20:55:13.906] avg_metric:[[0.88196475]
+ [0.86821572]
+ [0.92886311]] 
+[20:55:13.907] iteration 9400 : dice_score : 0.893015 
+[20:56:00.807] iteration 9600 : loss : 5.976209, loss_ce: 0.009629, loss_pse_sup_soft: 0.745823, alpha: 0.800580
+[20:56:02.913] avg_metric:[[0.88285043]
+ [0.86838701]
+ [0.92951331]] 
+[20:56:02.915] iteration 9600 : dice_score : 0.893584 
+[20:56:49.095] iteration 9800 : loss : 5.973011, loss_ce: 0.008350, loss_pse_sup_soft: 0.745583, alpha: 0.987378
+[20:56:51.235] avg_metric:[[0.88199484]
+ [0.86951039]
+ [0.928113  ]] 
+[20:56:51.236] iteration 9800 : dice_score : 0.893206 
+[20:57:38.043] iteration 10000 : loss : 5.973408, loss_ce: 0.008726, loss_pse_sup_soft: 0.745585, alpha: 0.234998
+[20:57:40.295] avg_metric:[[0.88269477]
+ [0.8672382 ]
+ [0.92790097]] 
+[20:57:40.296] iteration 10000 : dice_score : 0.892611 
+[20:57:40.339] save model to ../../model/HeartM_ACDC/A3_weakly_PLS_2d_unet_cct_v2_softcel8_ReUnmC_T01_0919/iter_10000.pth
+[20:58:26.695] iteration 10200 : loss : 5.974185, loss_ce: 0.009388, loss_pse_sup_soft: 0.745600, alpha: 0.841821
+[20:58:28.848] avg_metric:[[0.88323265]
+ [0.8659683 ]
+ [0.92785414]] 
+[20:58:28.849] iteration 10200 : dice_score : 0.892352 
+[20:59:15.817] iteration 10400 : loss : 5.972246, loss_ce: 0.008734, loss_pse_sup_soft: 0.745439, alpha: 0.336909
+[20:59:17.877] avg_metric:[[0.88180212]
+ [0.86636918]
+ [0.92763634]] 
+[20:59:17.878] iteration 10400 : dice_score : 0.891936 
+[21:00:04.445] iteration 10600 : loss : 5.972514, loss_ce: 0.008161, loss_pse_sup_soft: 0.745544, alpha: 0.898399
+[21:00:06.593] avg_metric:[[0.88181765]
+ [0.86565778]
+ [0.92766299]] 
+[21:00:06.594] iteration 10600 : dice_score : 0.891713 
+[21:00:53.853] iteration 10800 : loss : 5.970516, loss_ce: 0.007374, loss_pse_sup_soft: 0.745393, alpha: 0.223824
+[21:00:55.993] avg_metric:[[0.88350595]
+ [0.86846232]
+ [0.92734111]] 
+[21:00:55.994] iteration 10800 : dice_score : 0.893103 
+[21:01:42.617] iteration 11000 : loss : 5.972404, loss_ce: 0.008548, loss_pse_sup_soft: 0.745482, alpha: 0.935009
+[21:01:44.451] avg_metric:[[0.88130408]
+ [0.86812738]
+ [0.92779183]] 
+[21:01:44.452] iteration 11000 : dice_score : 0.892408 
+[21:02:31.720] iteration 11200 : loss : 5.971123, loss_ce: 0.007858, loss_pse_sup_soft: 0.745408, alpha: 0.762962
+[21:02:33.720] avg_metric:[[0.88143286]
+ [0.86733955]
+ [0.9276642 ]] 
+[21:02:33.720] iteration 11200 : dice_score : 0.892146 
+[21:03:20.090] iteration 11400 : loss : 5.972239, loss_ce: 0.007219, loss_pse_sup_soft: 0.745628, alpha: 0.818018
+[21:03:21.931] avg_metric:[[0.88075426]
+ [0.86871075]
+ [0.92597643]] 
+[21:03:21.932] iteration 11400 : dice_score : 0.891814 
+[21:04:09.046] iteration 11600 : loss : 5.976927, loss_ce: 0.008947, loss_pse_sup_soft: 0.745997, alpha: 0.056232
+[21:04:10.883] avg_metric:[[0.88193433]
+ [0.86853321]
+ [0.92509611]] 
+[21:04:10.883] iteration 11600 : dice_score : 0.891855 
+[21:04:57.887] iteration 11800 : loss : 5.970126, loss_ce: 0.007523, loss_pse_sup_soft: 0.745325, alpha: 0.364555
+[21:04:59.972] avg_metric:[[0.88328512]
+ [0.86619298]
+ [0.92755684]] 
+[21:04:59.972] iteration 11800 : dice_score : 0.892345 
+[21:05:46.555] iteration 12000 : loss : 5.971245, loss_ce: 0.007812, loss_pse_sup_soft: 0.745429, alpha: 0.000577
+[21:05:48.750] avg_metric:[[0.88503989]
+ [0.86664799]
+ [0.92962562]] 
+[21:05:48.750] iteration 12000 : dice_score : 0.893771 
+[21:06:35.918] iteration 12200 : loss : 5.977669, loss_ce: 0.009952, loss_pse_sup_soft: 0.745965, alpha: 0.069479
+[21:06:38.038] avg_metric:[[0.88262288]
+ [0.86735939]
+ [0.92456239]] 
+[21:06:38.039] iteration 12200 : dice_score : 0.891515 
+[21:07:24.566] iteration 12400 : loss : 5.972939, loss_ce: 0.008048, loss_pse_sup_soft: 0.745611, alpha: 0.662625
+[21:07:26.982] avg_metric:[[0.88313144]
+ [0.86642038]
+ [0.92716303]] 
+[21:07:26.983] iteration 12400 : dice_score : 0.892238 
+[21:08:14.288] iteration 12600 : loss : 5.973434, loss_ce: 0.008563, loss_pse_sup_soft: 0.745609, alpha: 0.933536
+[21:08:16.376] avg_metric:[[0.88275049]
+ [0.868744  ]
+ [0.92826885]] 
+[21:08:16.377] iteration 12600 : dice_score : 0.893254 
+[21:09:03.081] iteration 12800 : loss : 5.974279, loss_ce: 0.007953, loss_pse_sup_soft: 0.745791, alpha: 0.374596
+[21:09:05.207] avg_metric:[[0.88425627]
+ [0.8687673 ]
+ [0.92939501]] 
+[21:09:05.207] iteration 12800 : dice_score : 0.894140 
+[21:09:52.402] iteration 13000 : loss : 5.973150, loss_ce: 0.008696, loss_pse_sup_soft: 0.745557, alpha: 0.334795
+[21:09:54.682] avg_metric:[[0.88084678]
+ [0.8680328 ]
+ [0.92896991]] 
+[21:09:54.682] iteration 13000 : dice_score : 0.892616 
+[21:10:41.475] iteration 13200 : loss : 5.970605, loss_ce: 0.007363, loss_pse_sup_soft: 0.745405, alpha: 0.677066
+[21:10:43.396] avg_metric:[[0.88349728]
+ [0.86629566]
+ [0.92758573]] 
+[21:10:43.397] iteration 13200 : dice_score : 0.892460 
+[21:11:30.799] iteration 13400 : loss : 5.974057, loss_ce: 0.008539, loss_pse_sup_soft: 0.745690, alpha: 0.719439
+[21:11:32.788] avg_metric:[[0.88249961]
+ [0.86887066]
+ [0.92968122]] 
+[21:11:32.790] iteration 13400 : dice_score : 0.893684 
+[21:12:19.415] iteration 13600 : loss : 5.974960, loss_ce: 0.009281, loss_pse_sup_soft: 0.745710, alpha: 0.342312
+[21:12:21.451] avg_metric:[[0.88227407]
+ [0.8680071 ]
+ [0.92873024]] 
+[21:12:21.453] iteration 13600 : dice_score : 0.893004 
+[21:13:08.887] iteration 13800 : loss : 5.973451, loss_ce: 0.008480, loss_pse_sup_soft: 0.745621, alpha: 0.089510
+[21:13:10.831] avg_metric:[[0.88171803]
+ [0.86615764]
+ [0.92724314]] 
+[21:13:10.832] iteration 13800 : dice_score : 0.891706 
+[21:13:57.765] iteration 14000 : loss : 5.972824, loss_ce: 0.007800, loss_pse_sup_soft: 0.745628, alpha: 0.282470
+[21:13:59.809] avg_metric:[[0.88058405]
+ [0.86880139]
+ [0.92850615]] 
+[21:13:59.810] iteration 14000 : dice_score : 0.892631 
+[21:14:47.256] iteration 14200 : loss : 5.971217, loss_ce: 0.007326, loss_pse_sup_soft: 0.745486, alpha: 0.513668
+[21:14:49.306] avg_metric:[[0.88047588]
+ [0.86779058]
+ [0.92611687]] 
+[21:14:49.307] iteration 14200 : dice_score : 0.891461 
+[21:15:35.941] iteration 14400 : loss : 5.971910, loss_ce: 0.008077, loss_pse_sup_soft: 0.745479, alpha: 0.348119
+[21:15:37.742] avg_metric:[[0.88273757]
+ [0.86803925]
+ [0.92793896]] 
+[21:15:37.744] iteration 14400 : dice_score : 0.892905 
+[21:16:25.057] iteration 14600 : loss : 5.973749, loss_ce: 0.008632, loss_pse_sup_soft: 0.745640, alpha: 0.732853
+[21:16:27.186] avg_metric:[[0.88112211]
+ [0.86876576]
+ [0.92757849]] 
+[21:16:27.187] iteration 14600 : dice_score : 0.892489 
+[21:17:14.085] iteration 14800 : loss : 5.974804, loss_ce: 0.008972, loss_pse_sup_soft: 0.745729, alpha: 0.589592
+[21:17:16.156] avg_metric:[[0.88088795]
+ [0.86760444]
+ [0.92805263]] 
+[21:17:16.156] iteration 14800 : dice_score : 0.892182 
+[21:18:03.512] iteration 15000 : loss : 5.971297, loss_ce: 0.007142, loss_pse_sup_soft: 0.745519, alpha: 0.438765
+[21:18:05.605] avg_metric:[[0.88331383]
+ [0.86753371]
+ [0.92870259]] 
+[21:18:05.606] iteration 15000 : dice_score : 0.893183 
+[21:18:05.648] save model to ../../model/HeartM_ACDC/A3_weakly_PLS_2d_unet_cct_v2_softcel8_ReUnmC_T01_0919/iter_15000.pth
+[21:18:52.494] iteration 15200 : loss : 5.971592, loss_ce: 0.007460, loss_pse_sup_soft: 0.745517, alpha: 0.582978
+[21:18:54.716] avg_metric:[[0.88389035]
+ [0.86914492]
+ [0.92896994]] 
+[21:18:54.717] iteration 15200 : dice_score : 0.894002 
+[21:19:42.130] iteration 15400 : loss : 5.973725, loss_ce: 0.008900, loss_pse_sup_soft: 0.745603, alpha: 0.126045
+[21:19:44.369] avg_metric:[[0.88392101]
+ [0.86802462]
+ [0.9283001 ]] 
+[21:19:44.370] iteration 15400 : dice_score : 0.893415 
+[21:20:31.015] iteration 15600 : loss : 5.974988, loss_ce: 0.008436, loss_pse_sup_soft: 0.745819, alpha: 0.647897
+[21:20:33.194] avg_metric:[[0.88234842]
+ [0.86834242]
+ [0.92840097]] 
+[21:20:33.194] iteration 15600 : dice_score : 0.893031 
+[21:21:20.939] iteration 15800 : loss : 5.977225, loss_ce: 0.009589, loss_pse_sup_soft: 0.745955, alpha: 0.396698
+[21:21:22.881] avg_metric:[[0.88140898]
+ [0.86878384]
+ [0.92746773]] 
+[21:21:22.882] iteration 15800 : dice_score : 0.892554 
+[21:22:09.834] iteration 16000 : loss : 5.973506, loss_ce: 0.008701, loss_pse_sup_soft: 0.745601, alpha: 0.601766
+[21:22:12.052] avg_metric:[[0.88311279]
+ [0.86960993]
+ [0.93044825]] 
+[21:22:12.053] iteration 16000 : dice_score : 0.894390 
+[21:22:59.899] iteration 16200 : loss : 5.975991, loss_ce: 0.008715, loss_pse_sup_soft: 0.745909, alpha: 0.767826
+[21:23:02.046] avg_metric:[[0.88278178]
+ [0.86854377]
+ [0.92975554]] 
+[21:23:02.047] iteration 16200 : dice_score : 0.893694 
+[21:23:49.251] iteration 16400 : loss : 5.972873, loss_ce: 0.008336, loss_pse_sup_soft: 0.745567, alpha: 0.290716
+[21:23:51.234] avg_metric:[[0.88137315]
+ [0.86868367]
+ [0.92812559]] 
+[21:23:51.234] iteration 16400 : dice_score : 0.892727 
+[21:24:39.023] iteration 16600 : loss : 5.973007, loss_ce: 0.008360, loss_pse_sup_soft: 0.745581, alpha: 0.420156
+[21:24:41.359] avg_metric:[[0.88276672]
+ [0.87095491]
+ [0.93101937]] 
+[21:24:41.360] iteration 16600 : dice_score : 0.894914 
+[21:25:28.470] iteration 16800 : loss : 5.976577, loss_ce: 0.008878, loss_pse_sup_soft: 0.745962, alpha: 0.308593
+[21:25:30.624] avg_metric:[[0.87961445]
+ [0.86930811]
+ [0.92956152]] 
+[21:25:30.625] iteration 16800 : dice_score : 0.892828 
+[21:26:18.484] iteration 17000 : loss : 5.971000, loss_ce: 0.007396, loss_pse_sup_soft: 0.745450, alpha: 0.631983
+[21:26:20.577] avg_metric:[[0.882211  ]
+ [0.86857855]
+ [0.92796261]] 
+[21:26:20.578] iteration 17000 : dice_score : 0.892917 
+[21:27:07.734] iteration 17200 : loss : 5.974470, loss_ce: 0.008435, loss_pse_sup_soft: 0.745754, alpha: 0.336475
+[21:27:09.707] avg_metric:[[0.88201332]
+ [0.86898768]
+ [0.93003149]] 
+[21:27:09.708] iteration 17200 : dice_score : 0.893677 
+[21:27:57.876] iteration 17400 : loss : 5.971260, loss_ce: 0.007896, loss_pse_sup_soft: 0.745420, alpha: 0.803886
+[21:28:00.000] avg_metric:[[0.88419533]
+ [0.87023291]
+ [0.93346047]] 
+[21:28:00.001] iteration 17400 : dice_score : 0.895963 
+[21:28:47.131] iteration 17600 : loss : 5.969317, loss_ce: 0.007260, loss_pse_sup_soft: 0.745257, alpha: 0.384893
+[21:28:49.086] avg_metric:[[0.88310888]
+ [0.86736864]
+ [0.92755473]] 
+[21:28:49.088] iteration 17600 : dice_score : 0.892677 
+[21:29:36.916] iteration 17800 : loss : 5.976277, loss_ce: 0.008798, loss_pse_sup_soft: 0.745935, alpha: 0.097897
+[21:29:39.025] avg_metric:[[0.88269455]
+ [0.86949798]
+ [0.93016328]] 
+[21:29:39.026] iteration 17800 : dice_score : 0.894119 
+[21:30:26.168] iteration 18000 : loss : 5.977642, loss_ce: 0.009485, loss_pse_sup_soft: 0.746020, alpha: 0.877891
+[21:30:28.444] avg_metric:[[0.88400779]
+ [0.87034884]
+ [0.93025732]] 
+[21:30:28.445] iteration 18000 : dice_score : 0.894871 
+[21:31:16.157] iteration 18200 : loss : 5.973194, loss_ce: 0.008450, loss_pse_sup_soft: 0.745593, alpha: 0.363489
+[21:31:18.282] avg_metric:[[0.88241599]
+ [0.86759985]
+ [0.92934599]] 
+[21:31:18.283] iteration 18200 : dice_score : 0.893121 
+[21:32:05.508] iteration 18400 : loss : 5.974234, loss_ce: 0.008230, loss_pse_sup_soft: 0.745751, alpha: 0.825629
+[21:32:07.385] avg_metric:[[0.88337914]
+ [0.86884552]
+ [0.92837729]] 
+[21:32:07.387] iteration 18400 : dice_score : 0.893534 
+[21:32:55.319] iteration 18600 : loss : 5.976980, loss_ce: 0.009614, loss_pse_sup_soft: 0.745921, alpha: 0.510830
+[21:32:57.405] avg_metric:[[0.88252572]
+ [0.8710099 ]
+ [0.92935659]] 
+[21:32:57.406] iteration 18600 : dice_score : 0.894297 
+[21:33:44.735] iteration 18800 : loss : 5.969488, loss_ce: 0.007788, loss_pse_sup_soft: 0.745213, alpha: 0.989350
+[21:33:46.948] avg_metric:[[0.88222613]
+ [0.86673816]
+ [0.92700268]] 
+[21:33:46.950] iteration 18800 : dice_score : 0.891989 
+[21:34:34.721] iteration 19000 : loss : 5.971971, loss_ce: 0.007492, loss_pse_sup_soft: 0.745560, alpha: 0.842633
+[21:34:36.861] avg_metric:[[0.88247413]
+ [0.86899656]
+ [0.92979819]] 
+[21:34:36.863] iteration 19000 : dice_score : 0.893756 
+[21:35:23.971] iteration 19200 : loss : 5.972138, loss_ce: 0.008215, loss_pse_sup_soft: 0.745490, alpha: 0.278862
+[21:35:25.916] avg_metric:[[0.88244373]
+ [0.86857043]
+ [0.93102464]] 
+[21:35:25.918] iteration 19200 : dice_score : 0.894013 
+[21:36:13.838] iteration 19400 : loss : 5.974434, loss_ce: 0.008998, loss_pse_sup_soft: 0.745680, alpha: 0.933314
+[21:36:15.703] avg_metric:[[0.88075468]
+ [0.87007741]
+ [0.92808066]] 
+[21:36:15.704] iteration 19400 : dice_score : 0.892971 
+[21:37:03.189] iteration 19600 : loss : 5.976727, loss_ce: 0.009611, loss_pse_sup_soft: 0.745889, alpha: 0.554988
+[21:37:05.316] avg_metric:[[0.88275124]
+ [0.86869475]
+ [0.9282738 ]] 
+[21:37:05.317] iteration 19600 : dice_score : 0.893240 
+[21:37:53.411] iteration 19800 : loss : 5.974136, loss_ce: 0.008517, loss_pse_sup_soft: 0.745702, alpha: 0.633755
+[21:37:55.470] avg_metric:[[0.88344047]
+ [0.86792981]
+ [0.93034472]] 
+[21:37:55.470] iteration 19800 : dice_score : 0.893905 
+[21:38:42.615] iteration 20000 : loss : 5.973078, loss_ce: 0.007538, loss_pse_sup_soft: 0.745692, alpha: 0.342870
+[21:38:44.717] avg_metric:[[0.88295626]
+ [0.86973787]
+ [0.92821667]] 
+[21:38:44.718] iteration 20000 : dice_score : 0.893637 
+[21:38:44.764] save model to ../../model/HeartM_ACDC/A3_weakly_PLS_2d_unet_cct_v2_softcel8_ReUnmC_T01_0919/iter_20000.pth
+[21:39:32.693] iteration 20200 : loss : 5.975029, loss_ce: 0.009175, loss_pse_sup_soft: 0.745732, alpha: 0.605724
+[21:39:34.597] avg_metric:[[0.88269092]
+ [0.86968085]
+ [0.92982734]] 
+[21:39:34.597] iteration 20200 : dice_score : 0.894066 
+[21:40:22.102] iteration 20400 : loss : 5.972341, loss_ce: 0.008262, loss_pse_sup_soft: 0.745510, alpha: 0.022194
+[21:40:24.350] avg_metric:[[0.88267581]
+ [0.86905558]
+ [0.92991842]] 
+[21:40:24.351] iteration 20400 : dice_score : 0.893883 
+[21:41:12.371] iteration 20600 : loss : 5.971821, loss_ce: 0.007350, loss_pse_sup_soft: 0.745559, alpha: 0.422622
+[21:41:14.557] avg_metric:[[0.88190505]
+ [0.86935034]
+ [0.92779532]] 
+[21:41:14.558] iteration 20600 : dice_score : 0.893017 
+[21:42:01.875] iteration 20800 : loss : 5.973343, loss_ce: 0.007897, loss_pse_sup_soft: 0.745681, alpha: 0.142986
+[21:42:04.150] avg_metric:[[0.88220343]
+ [0.86905859]
+ [0.92946759]] 
+[21:42:04.151] iteration 20800 : dice_score : 0.893577 
+[21:42:51.869] iteration 21000 : loss : 5.970727, loss_ce: 0.006765, loss_pse_sup_soft: 0.745495, alpha: 0.461334
+[21:42:53.997] avg_metric:[[0.88234762]
+ [0.87027924]
+ [0.92994538]] 
+[21:42:53.998] iteration 21000 : dice_score : 0.894191 
+[21:43:41.211] iteration 21200 : loss : 5.971716, loss_ce: 0.008145, loss_pse_sup_soft: 0.745446, alpha: 0.539398
+[21:43:43.345] avg_metric:[[0.88263844]
+ [0.87006453]
+ [0.92940423]] 
+[21:43:43.346] iteration 21200 : dice_score : 0.894036 
+[21:44:31.343] iteration 21400 : loss : 5.974250, loss_ce: 0.007679, loss_pse_sup_soft: 0.745821, alpha: 0.329030
+[21:44:33.448] avg_metric:[[0.88145642]
+ [0.86985516]
+ [0.93042943]] 
+[21:44:33.449] iteration 21400 : dice_score : 0.893914 
+[21:45:20.791] iteration 21600 : loss : 5.971435, loss_ce: 0.007764, loss_pse_sup_soft: 0.745459, alpha: 0.693089
+[21:45:23.068] avg_metric:[[0.88259474]
+ [0.86938826]
+ [0.92947936]] 
+[21:45:23.069] iteration 21600 : dice_score : 0.893821 
+[21:46:10.990] iteration 21800 : loss : 5.972110, loss_ce: 0.007825, loss_pse_sup_soft: 0.745536, alpha: 0.499555
+[21:46:12.944] avg_metric:[[0.88157191]
+ [0.86895289]
+ [0.92944936]] 
+[21:46:12.945] iteration 21800 : dice_score : 0.893325 
+[21:46:59.920] iteration 22000 : loss : 5.969105, loss_ce: 0.007151, loss_pse_sup_soft: 0.745244, alpha: 0.644564
+[21:47:01.972] avg_metric:[[0.88133289]
+ [0.86928048]
+ [0.92890748]] 
+[21:47:01.973] iteration 22000 : dice_score : 0.893174 
+[21:47:49.861] iteration 22200 : loss : 5.972764, loss_ce: 0.008098, loss_pse_sup_soft: 0.745583, alpha: 0.757313
+[21:47:51.812] avg_metric:[[0.88337717]
+ [0.86978926]
+ [0.92970608]] 
+[21:47:51.813] iteration 22200 : dice_score : 0.894291 
+[21:48:38.915] iteration 22400 : loss : 5.974967, loss_ce: 0.009446, loss_pse_sup_soft: 0.745690, alpha: 0.897646
+[21:48:41.002] avg_metric:[[0.88318803]
+ [0.86970243]
+ [0.93056118]] 
+[21:48:41.003] iteration 22400 : dice_score : 0.894484 
+[21:49:28.814] iteration 22600 : loss : 5.970973, loss_ce: 0.007416, loss_pse_sup_soft: 0.745445, alpha: 0.006473
+[21:49:30.884] avg_metric:[[0.88233691]
+ [0.87014713]
+ [0.92987683]] 
+[21:49:30.886] iteration 22600 : dice_score : 0.894120 
+[21:50:18.191] iteration 22800 : loss : 5.972545, loss_ce: 0.008608, loss_pse_sup_soft: 0.745492, alpha: 0.771763
+[21:50:20.324] avg_metric:[[0.88326926]
+ [0.86918749]
+ [0.93018456]] 
+[21:50:20.324] iteration 22800 : dice_score : 0.894214 
+[21:51:08.228] iteration 23000 : loss : 5.972520, loss_ce: 0.007948, loss_pse_sup_soft: 0.745571, alpha: 0.578769
+[21:51:10.320] avg_metric:[[0.88201218]
+ [0.86858083]
+ [0.93022777]] 
+[21:51:10.322] iteration 23000 : dice_score : 0.893607 
+[21:51:58.565] iteration 23200 : loss : 5.971138, loss_ce: 0.007251, loss_pse_sup_soft: 0.745486, alpha: 0.738124
+[21:52:00.705] avg_metric:[[0.88311374]
+ [0.86912418]
+ [0.93020424]] 
+[21:52:00.706] iteration 23200 : dice_score : 0.894147 
+[21:52:47.917] iteration 23400 : loss : 5.973992, loss_ce: 0.008921, loss_pse_sup_soft: 0.745634, alpha: 0.972117
+[21:52:49.978] avg_metric:[[0.8824476 ]
+ [0.86946534]
+ [0.92883725]] 
+[21:52:49.979] iteration 23400 : dice_score : 0.893583 
+[21:53:37.964] iteration 23600 : loss : 5.973829, loss_ce: 0.009272, loss_pse_sup_soft: 0.745570, alpha: 0.486746
+[21:53:40.133] avg_metric:[[0.88129104]
+ [0.86989943]
+ [0.92965772]] 
+[21:53:40.134] iteration 23600 : dice_score : 0.893616 
+[21:54:27.213] iteration 23800 : loss : 5.973519, loss_ce: 0.007905, loss_pse_sup_soft: 0.745702, alpha: 0.099166
+[21:54:29.293] avg_metric:[[0.88188561]
+ [0.86997776]
+ [0.93078784]] 
+[21:54:29.293] iteration 23800 : dice_score : 0.894217 
+[21:55:17.682] iteration 24000 : loss : 5.973821, loss_ce: 0.008081, loss_pse_sup_soft: 0.745718, alpha: 0.084777
+[21:55:19.927] avg_metric:[[0.88211333]
+ [0.87013725]
+ [0.93023816]] 
+[21:55:19.928] iteration 24000 : dice_score : 0.894163 
+[21:56:07.184] iteration 24200 : loss : 5.970249, loss_ce: 0.007618, loss_pse_sup_soft: 0.745329, alpha: 0.351433
+[21:56:09.191] avg_metric:[[0.88280362]
+ [0.86862428]
+ [0.93030103]] 
+[21:56:09.192] iteration 24200 : dice_score : 0.893910 
+[21:56:57.261] iteration 24400 : loss : 5.972057, loss_ce: 0.008693, loss_pse_sup_soft: 0.745421, alpha: 0.908610
+[21:56:59.386] avg_metric:[[0.8803236 ]
+ [0.86857218]
+ [0.92850905]] 
+[21:56:59.386] iteration 24400 : dice_score : 0.892468 
+[21:57:46.727] iteration 24600 : loss : 5.974432, loss_ce: 0.008593, loss_pse_sup_soft: 0.745730, alpha: 0.183770
+[21:57:49.178] avg_metric:[[0.88282053]
+ [0.87006649]
+ [0.9312719 ]] 
+[21:57:49.179] iteration 24600 : dice_score : 0.894720 
+[21:58:37.311] iteration 24800 : loss : 5.975046, loss_ce: 0.009095, loss_pse_sup_soft: 0.745744, alpha: 0.902544
+[21:58:39.431] avg_metric:[[0.88113546]
+ [0.86999825]
+ [0.93035585]] 
+[21:58:39.432] iteration 24800 : dice_score : 0.893830 
+[21:59:27.261] iteration 25000 : loss : 5.969604, loss_ce: 0.007153, loss_pse_sup_soft: 0.745306, alpha: 0.066243
+[21:59:29.442] avg_metric:[[0.88220788]
+ [0.86894493]
+ [0.93016802]] 
+[21:59:29.443] iteration 25000 : dice_score : 0.893774 
+[21:59:29.490] save model to ../../model/HeartM_ACDC/A3_weakly_PLS_2d_unet_cct_v2_softcel8_ReUnmC_T01_0919/iter_25000.pth
+[22:00:17.739] iteration 25200 : loss : 5.970847, loss_ce: 0.007137, loss_pse_sup_soft: 0.745464, alpha: 0.858375
+[22:00:20.055] avg_metric:[[0.88147934]
+ [0.86954637]
+ [0.92824638]] 
+[22:00:20.056] iteration 25200 : dice_score : 0.893091 
+[22:01:07.434] iteration 25400 : loss : 5.977373, loss_ce: 0.009744, loss_pse_sup_soft: 0.745954, alpha: 0.144878
+[22:01:09.397] avg_metric:[[0.88213835]
+ [0.86962921]
+ [0.929668  ]] 
+[22:01:09.398] iteration 25400 : dice_score : 0.893812 
+[22:01:57.517] iteration 25600 : loss : 5.973141, loss_ce: 0.008915, loss_pse_sup_soft: 0.745528, alpha: 0.158830
+[22:01:59.874] avg_metric:[[0.88289047]
+ [0.86826352]
+ [0.93023004]] 
+[22:01:59.876] iteration 25600 : dice_score : 0.893795 
+[22:02:48.076] iteration 25800 : loss : 5.973017, loss_ce: 0.007791, loss_pse_sup_soft: 0.745653, alpha: 0.916378
+[22:02:50.495] avg_metric:[[0.88316567]
+ [0.86972964]
+ [0.93024213]] 
+[22:02:50.499] iteration 25800 : dice_score : 0.894379 
+[22:03:38.525] iteration 26000 : loss : 5.974954, loss_ce: 0.009295, loss_pse_sup_soft: 0.745707, alpha: 0.934527
+[22:03:40.723] avg_metric:[[0.88265547]
+ [0.8695285 ]
+ [0.93000074]] 
+[22:03:40.725] iteration 26000 : dice_score : 0.894062 
+[22:04:27.901] iteration 26200 : loss : 5.971660, loss_ce: 0.007935, loss_pse_sup_soft: 0.745466, alpha: 0.355472
+[22:04:30.318] avg_metric:[[0.88265687]
+ [0.86945279]
+ [0.93022088]] 
+[22:04:30.320] iteration 26200 : dice_score : 0.894110 
+[22:05:17.976] iteration 26400 : loss : 5.974725, loss_ce: 0.008532, loss_pse_sup_soft: 0.745774, alpha: 0.111174
+[22:05:20.180] avg_metric:[[0.88173634]
+ [0.86994856]
+ [0.92858781]] 
+[22:05:20.181] iteration 26400 : dice_score : 0.893424 
+[22:06:07.290] iteration 26600 : loss : 5.972170, loss_ce: 0.007637, loss_pse_sup_soft: 0.745567, alpha: 0.778200
+[22:06:09.369] avg_metric:[[0.88201519]
+ [0.8701585 ]
+ [0.93088172]] 
+[22:06:09.371] iteration 26600 : dice_score : 0.894352 
+[22:06:57.448] iteration 26800 : loss : 5.974666, loss_ce: 0.008680, loss_pse_sup_soft: 0.745748, alpha: 0.819975
+[22:06:59.637] avg_metric:[[0.88292361]
+ [0.87031638]
+ [0.93159955]] 
+[22:06:59.638] iteration 26800 : dice_score : 0.894947 
+[22:07:47.008] iteration 27000 : loss : 5.970686, loss_ce: 0.007203, loss_pse_sup_soft: 0.745435, alpha: 0.165710
+[22:07:49.084] avg_metric:[[0.88303638]
+ [0.86899878]
+ [0.93078058]] 
+[22:07:49.086] iteration 27000 : dice_score : 0.894272 
+[22:08:36.995] iteration 27200 : loss : 5.975157, loss_ce: 0.008281, loss_pse_sup_soft: 0.745860, alpha: 0.173979
+[22:08:39.015] avg_metric:[[0.8817466 ]
+ [0.87026194]
+ [0.93109832]] 
+[22:08:39.017] iteration 27200 : dice_score : 0.894369 
+[22:09:26.461] iteration 27400 : loss : 5.970967, loss_ce: 0.008099, loss_pse_sup_soft: 0.745359, alpha: 0.708037
+[22:09:28.687] avg_metric:[[0.88274949]
+ [0.86990064]
+ [0.9303478 ]] 
+[22:09:28.689] iteration 27400 : dice_score : 0.894333 
+[22:10:17.209] iteration 27600 : loss : 5.972577, loss_ce: 0.007987, loss_pse_sup_soft: 0.745574, alpha: 0.839224
+[22:10:19.348] avg_metric:[[0.88145404]
+ [0.86955079]
+ [0.93027917]] 
+[22:10:19.349] iteration 27600 : dice_score : 0.893761 
+[22:11:06.575] iteration 27800 : loss : 5.973475, loss_ce: 0.008860, loss_pse_sup_soft: 0.745577, alpha: 0.477905
+[22:11:08.790] avg_metric:[[0.88238475]
+ [0.86950615]
+ [0.92957513]] 
+[22:11:08.791] iteration 27800 : dice_score : 0.893822 
+[22:11:56.871] iteration 28000 : loss : 5.974567, loss_ce: 0.008164, loss_pse_sup_soft: 0.745800, alpha: 0.928330
+[22:11:58.805] avg_metric:[[0.8823987 ]
+ [0.87047348]
+ [0.92992349]] 
+[22:11:58.806] iteration 28000 : dice_score : 0.894265 
+[22:12:46.161] iteration 28200 : loss : 5.972686, loss_ce: 0.008163, loss_pse_sup_soft: 0.745565, alpha: 0.381996
+[22:12:48.252] avg_metric:[[0.88178054]
+ [0.8696337 ]
+ [0.92903798]] 
+[22:12:48.253] iteration 28200 : dice_score : 0.893484 
+[22:13:36.381] iteration 28400 : loss : 5.969258, loss_ce: 0.007185, loss_pse_sup_soft: 0.745259, alpha: 0.721679
+[22:13:38.519] avg_metric:[[0.88277671]
+ [0.86909   ]
+ [0.92981532]] 
+[22:13:38.520] iteration 28400 : dice_score : 0.893894 
+[22:14:25.990] iteration 28600 : loss : 5.968431, loss_ce: 0.007136, loss_pse_sup_soft: 0.745162, alpha: 0.560758
+[22:14:28.142] avg_metric:[[0.88203134]
+ [0.86937083]
+ [0.92836706]] 
+[22:14:28.143] iteration 28600 : dice_score : 0.893256 
+[22:15:16.046] iteration 28800 : loss : 5.974935, loss_ce: 0.008563, loss_pse_sup_soft: 0.745797, alpha: 0.269928
+[22:15:18.250] avg_metric:[[0.8819423 ]
+ [0.86973213]
+ [0.9281872 ]] 
+[22:15:18.251] iteration 28800 : dice_score : 0.893287 
+[22:16:05.466] iteration 29000 : loss : 5.971748, loss_ce: 0.008074, loss_pse_sup_soft: 0.745459, alpha: 0.488476
+[22:16:07.666] avg_metric:[[0.88284519]
+ [0.87002415]
+ [0.92991064]] 
+[22:16:07.667] iteration 29000 : dice_score : 0.894260 
+[22:16:55.620] iteration 29200 : loss : 5.971180, loss_ce: 0.007657, loss_pse_sup_soft: 0.745440, alpha: 0.477899
+[22:16:57.719] avg_metric:[[0.88226239]
+ [0.86916706]
+ [0.92946759]] 
+[22:16:57.721] iteration 29200 : dice_score : 0.893632 
+[22:17:45.007] iteration 29400 : loss : 5.970459, loss_ce: 0.007216, loss_pse_sup_soft: 0.745405, alpha: 0.585183
+[22:17:46.915] avg_metric:[[0.88296304]
+ [0.86948744]
+ [0.92943984]] 
+[22:17:46.915] iteration 29400 : dice_score : 0.893963 
+[22:18:34.667] iteration 29600 : loss : 5.969799, loss_ce: 0.006606, loss_pse_sup_soft: 0.745399, alpha: 0.452677
+[22:18:36.650] avg_metric:[[0.88134141]
+ [0.87025697]
+ [0.92917683]] 
+[22:18:36.651] iteration 29600 : dice_score : 0.893592 
+[22:19:23.951] iteration 29800 : loss : 5.971266, loss_ce: 0.007906, loss_pse_sup_soft: 0.745420, alpha: 0.138123
+[22:19:26.313] avg_metric:[[0.88198942]
+ [0.8697592 ]
+ [0.92994896]] 
+[22:19:26.314] iteration 29800 : dice_score : 0.893899 
+[22:20:14.360] iteration 30000 : loss : 5.974875, loss_ce: 0.008719, loss_pse_sup_soft: 0.745770, alpha: 0.605944
+[22:20:16.576] avg_metric:[[0.88174386]
+ [0.8702732 ]
+ [0.93027124]] 
+[22:20:16.577] iteration 30000 : dice_score : 0.894096 
+[22:20:16.623] save model to ../../model/HeartM_ACDC/A3_weakly_PLS_2d_unet_cct_v2_softcel8_ReUnmC_T01_0919/iter_30000.pth
+[22:20:16.716] time cost: 7377.461703777313 s, i.e, 2.0492949177159203 h
