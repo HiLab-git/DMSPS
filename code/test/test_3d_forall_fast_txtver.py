@@ -47,6 +47,8 @@ parser.add_argument('--model', type=str,
                     default='unet_cct_dropout_3D', help='select model: unet_3D, unet_cct_dropout_3D')
 parser.add_argument('--exp', type=str,
                     default='W_weakly_SPS_3d', help='experiment_name')
+parser.add_argument('--fold', type=str,
+                    default='stage1', help='fold name')
 parser.add_argument('--num_classes', type=int,  default=8,
                     help='output channel of network') 
 parser.add_argument('--tt_num', type=int, default=1,

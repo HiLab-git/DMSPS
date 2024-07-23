@@ -40,6 +40,8 @@ parser.add_argument('--model', type=str,
                     default='unet_cct', help='model_name:unet,unet_cct, etc. the name of pretrained model from stage1')
 parser.add_argument('--exp', type=str,
                     default='A3_weakly_PLS_soft_2d', help='experiment_name')
+parser.add_argument('--fold', type=str,
+                    default='stage1', help='fold name')
 parser.add_argument('--num_classes', type=int,  default=4,
                     help='output channel of network') 
 parser.add_argument('--tt_num', type=int, default=3,

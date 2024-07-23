@@ -30,7 +30,7 @@ CUDA_LAUNCH_BLOCKING=1 CUDA_VISIBLE_DEVICES=0 python train/A_train_weaklySup_SPS
     --model unet_cct --exp A_weakly_SPS_2d --fold stage2 --sup_type pseudoLab --trainData trainReT01.txt
 
 # test for stage2
-CUDA_LAUNCH_BLOCKING=1 CUDA_VISIBLE_DEVICES=0 python python test/test_2d_forall_fast_txtver.py \
+CUDA_LAUNCH_BLOCKING=1 CUDA_VISIBLE_DEVICES=0 python test/test_2d_forall_fast_txtver.py \
     --data_root_path /mnt/data/HM/Datasets/ACDC2017/ACDC_for2D \
     --model unet_cct --exp A_weakly_SPS_2d --fold stage2
 

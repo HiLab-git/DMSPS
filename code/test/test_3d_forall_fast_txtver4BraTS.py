@@ -48,7 +48,7 @@ parser.add_argument('--model', type=str,
 parser.add_argument('--exp', type=str,
                     default='T3_weakly_SPS_3d', help='experiment_name')
 parser.add_argument('--fold', type=str,
-                    default='v280_ce_l001_240507', help='fold name') 
+                    default='stage1', help='fold name') 
 parser.add_argument('--num_classes', type=int,  default=3,
                     help='output channel of network') 
 parser.add_argument('--tt_num', type=int, default=1,
