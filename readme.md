@@ -48,11 +48,13 @@ python preprocess_ACDC.py
 1. the first stage 
 ```
 cd code/test
-python test_2d_forall_fast_txtver.py --data_name Heart_ACDC_Example --exp A_weakly_SPS_2d --fold stage1 --model unet_cct --tt_num 1
+python test_2d_forall_fast_txtver.py --data_name Heart_ACDC_Example \
+--exp A_weakly_SPS_2d --fold stage1 --model unet_cct --tt_num 1
 ```
 2. the second stage
 ```
-python test_2d_forall_fast_txtver.py --data_name Heart_ACDC_Example --exp A_weakly_SPS_2d --fold stage2 --model unet_cct --tt_num 1
+python test_2d_forall_fast_txtver.py --data_name Heart_ACDC_Example \
+--exp A_weakly_SPS_2d --fold stage2 --model unet_cct --tt_num 1
 ```
 
 ### Train and test for the first stage 
@@ -90,7 +92,8 @@ python retrain_postProcess_ACDC_uncertainty.py \
 cd code/train
 python A_train_weaklySup_SPS_2d_soft_retrainUncertainty.py \
     --data_root_path  $yourPath/ACDC2017/ACDC_for2D \
-    --model unet_cct --exp A_weakly_SPS_2d --fold stage2 --sup_type pseudoLab --trainData trainReT01.txt
+    --model unet_cct --exp A_weakly_SPS_2d --fold stage2 \
+    --sup_type pseudoLab --trainData trainReT01.txt
 ```
 4. test for stage2
 ```
