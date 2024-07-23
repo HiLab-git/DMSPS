@@ -18,14 +18,12 @@ If you use this project in your research, please cite the following works:
   publisher={Elsevier}
 }
 
-@article{zhong2024semi,
-  title={Semi-supervised pathological image segmentation via cross distillation of multiple attentions and Seg-CAM consistency},
-  author={Zhong, Lanfeng and Luo, Xiangde and Liao, Xin and Zhang, Shaoting and Wang, Guotai},
-  journal={Pattern Recognition},
-  pages={110492},
-  year={2024},
-  publisher={Elsevier}
-}
+@article{luo2022scribbleseg,
+  title={Scribble-Supervised Medical Image Segmentation via Dual-Branch Network and Dynamically Mixed Pseudo Labels Supervision},
+  author={Xiangde Luo, Minhao Hu, Wenjun Liao, Shuwei Zhai, Tao Song, Guotai Wang, Shaoting Zhang},
+  journal={Medical Image Computing and Computer Assisted Intervention -- MICCAI 2022},
+  year={2022},
+  pages={528--538}}
 ```
 ### Dataset
 * The ACDC dataset can be downloaded from the Baidu Disk: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). And the extraction code is：et38 .
