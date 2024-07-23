@@ -6,10 +6,8 @@ And the previous version is published on the [MICCAI](https://link.springer.com/
 The overall framework of DMSPS：
 ![overall](https://github.com/HiLab-git/DMSPS/blob/master/imgs/framework.png)
 
-
-
-
 ### Citation
+If you use this project in your research, please cite the following works:
 ```
 @article{han2024dmsps,
   title={DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation},
@@ -29,6 +27,10 @@ The overall framework of DMSPS：
   publisher={Elsevier}
 }
 ```
+### Dataset
+* The ACDC dataset can be downloaded from the Baidu Disk: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). And the extraction code is：et38 .
+
+
 
 ### Acknowledgement
 The code of scribble-supervised learning framework is borrowed from [WSL4MIS](https://github.com/HiLab-git/WSL4MIS)
