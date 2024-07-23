@@ -23,7 +23,7 @@ If you use this project in your research, please cite the following works:
   author={Xiangde Luo, Minhao Hu, Wenjun Liao, Shuwei Zhai, Tao Song, Guotai Wang, Shaoting Zhang},
   journal={Medical Image Computing and Computer Assisted Intervention -- MICCAI 2022},
   year={2022},
-  pages={528--538}}git 
+  pages={528--538}}
 ```
 ## Dataset
 * The ACDC dataset with mask annotations can be downloaded from: [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html).
