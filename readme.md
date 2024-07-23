@@ -18,12 +18,14 @@ If you use this project in your research, please cite the following works:
   publisher={Elsevier}
 }
 
-@article{luo2022scribbleseg,
-  title={Scribble-Supervised Medical Image Segmentation via Dual-Branch Network and Dynamically Mixed Pseudo Labels Supervision},
-  author={Xiangde Luo, Minhao Hu, Wenjun Liao, Shuwei Zhai, Tao Song, Guotai Wang, Shaoting Zhang},
-  journal={Medical Image Computing and Computer Assisted Intervention -- MICCAI 2022},
+@inproceedings{luo2022scribble,
+  title={Scribble-supervised medical image segmentation via dual-branch network and dynamically mixed pseudo labels supervision},
+  author={Luo, Xiangde and Hu, Minhao and Liao, Wenjun and Zhai, Shuwei and Song, Tao and Wang, Guotai and Zhang, Shaoting},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={528--538},
   year={2022},
-  pages={528--538}}
+  organization={Springer}
+}
 ```
 
 # Dataset

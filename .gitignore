@@ -2,5 +2,5 @@
 *_example
 *_ACDC
 *__pycache__
-*_slices
-*_volumes
+# *_slices
+# *_volumes
