@@ -23,7 +23,7 @@ If you use this project in your research, please cite the following works:
   author={Xiangde Luo, Minhao Hu, Wenjun Liao, Shuwei Zhai, Tao Song, Guotai Wang, Shaoting Zhang},
   journal={Medical Image Computing and Computer Assisted Intervention -- MICCAI 2022},
   year={2022},
-  pages={528--538}}
+  pages={528--538}}git 
 ```
 ### Dataset
 * The ACDC dataset can be downloaded from the Baidu Disk: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). And the extraction code is：et38 .
