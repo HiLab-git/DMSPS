@@ -39,7 +39,7 @@ parser.add_argument('--savedir', type=str,
 parser.add_argument('--model', type=str,
                     default='unet_cct', help='model_name:unet,unet_cct')
 parser.add_argument('--exp', type=str,
-                    default='A_weakly_SPS_soft_2d', help='Experiment name')
+                    default='A_weakly_SPS_2d', help='Experiment name')
 parser.add_argument('--fold', type=str,
                     default='stage1', help='fold name')
 parser.add_argument('--num_classes', type=int,  default=4,
