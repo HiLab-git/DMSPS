@@ -1,10 +1,10 @@
 # DMSPS
 official code for: DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation. MedIA 2024 [MedIA](https://www.sciencedirect.com/science/article/pii/S1361841524001993?dgcid=author).
-And the previous vervision is published on the [MICCAI](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_50) 2022.
+And the previous version is published on the [MICCAI](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_50) 2022.
 
 ### Overall Framework
-There are three branches based on different attention mechanisms and two losses in our framework
-![overall](https://github.com/HiLab-git/DMSPS/blob/main/imgs/framework.png)
+The overall framework of DMSPS：
+![overall](https://github.com/HiLab-git/DMSPS/origin/master/imgs/framework.png)
 
 
 
