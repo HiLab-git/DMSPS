@@ -4,7 +4,7 @@ And the previous version is published on the [MICCAI](https://link.springer.com/
 
 ### Overall Framework
 The overall framework of DMSPS：
-![overall](https://github.com/HiLab-git/DMSPS/origin/master/imgs/framework.png)
+![overall](https://github.com/HiLab-git/DMSPS/blob/master/imgs/framework.png)
 
 
 
