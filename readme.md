@@ -29,7 +29,7 @@ If you use this project in your research, please cite the following works:
 # Dataset
 * The ACDC dataset with mask annotations can be downloaded from: [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html).
 * The Scribble annotations of ACDC can be downloaded from: [Scribble](https://gvalvano.github.io/wss-multiscale-adversarial-attention-gates/data).
-* You can also download the specific ADCDC data used in this article from this Baidu Disk link: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). The extraction code is：et38 .
+* You can also download the specific ACDC data used in this article from this Baidu Disk link: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). The extraction code is：et38 .
 
 # Usage: [Taking the ACDC segmentation task as an example]
 ### Step0:
