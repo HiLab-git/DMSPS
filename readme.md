@@ -31,8 +31,10 @@ If you use this project in your research, please cite the following works:
 # Dataset
 * The ACDC dataset with mask annotations can be downloaded from: [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html).
 * The Scribble annotations of ACDC can be downloaded from: [Scribble](https://gvalvano.github.io/wss-multiscale-adversarial-attention-gates/data).
-* You can also download the ACDC data from the following Baidu disk link, where the same training set, test set and verification set as in DMSPS have been divided: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). The extraction code is：et38 .
+* The ACDC data can also be downloaded from the following BaiduPan link, where the same training set, test set and verification set as in DMSPS have been divided: [ACDC BaiduPan](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). The extraction code is：et38 .
 * The WORD dataset can be downloaded from [WORD](https://github.com/HiLab-git/WORD?tab=readme-ov-file).
+* The BraTS2020 dataset can be downloaded from [BraTS2020](https://www.med.upenn.edu/cbica/brats2020/data.html). Note that this work aimed to segment two foreground classes: the tumor core and the peritumoral
+edema. Scribbles could be genearted by this simulation code: [scribble-generate](https://github.com/HiLab-git/DMSPS/blob/master/code/dataloader/scribble_generater.py)
 
 
 # Usage: [Taking the ACDC segmentation task as an example]
@@ -42,7 +44,7 @@ If you use this project in your research, please cite the following works:
 git clone https://github.com/HiLab-git/DMSPS
 cd DMSPS
 ```
-2. Data pre-processing os used or the processed data.
+2. Data pre-processing.
 ```
 cd code/dataloaders
 python preprocess_ACDC.py
