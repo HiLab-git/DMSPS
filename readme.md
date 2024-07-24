@@ -32,6 +32,8 @@ If you use this project in your research, please cite the following works:
 * The ACDC dataset with mask annotations can be downloaded from: [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html).
 * The Scribble annotations of ACDC can be downloaded from: [Scribble](https://gvalvano.github.io/wss-multiscale-adversarial-attention-gates/data).
 * You can also download the ACDC data from the following Baidu disk link, where the same training set, test set and verification set as in DMSPS have been divided: [ACDC](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). The extraction code is：et38 .
+* The WORD dataset can be downloaded from [WORD](https://github.com/HiLab-git/WORD?tab=readme-ov-file).
+
 
 # Usage: [Taking the ACDC segmentation task as an example]
 ### Step0:
