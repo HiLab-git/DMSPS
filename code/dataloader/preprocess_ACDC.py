@@ -128,7 +128,6 @@ def deal_dataSet_to_volumes(subdir = "train"):#for volumes
         scribble_path = case.replace("labels", "scribbles_rlessd16").replace("_gt","_scribble")
         scribble_itk = sitk.ReadImage(scribble_path)
         scribble = sitk.GetArrayFromImage(scribble_itk)
-
         
         
         if image.shape != label.shape:

@@ -313,7 +313,7 @@ def write_images_nametxt_volumes(): #70，15，15
             f.write(os.path.join("Volumes", name)+'\n')
 
 
-def deal_trainSet_to_slices(): # 259个train
+def deal_trainSet_to_slices(): # 259 train
     input_root = predata_root
     save_root_path = input_root+"/trainSlices4"
     if not os.path.exists(save_root_path):
