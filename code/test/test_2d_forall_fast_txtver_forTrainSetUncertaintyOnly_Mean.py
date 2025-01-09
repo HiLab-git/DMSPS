@@ -79,7 +79,7 @@ def get_rgb_from_label_ACDC(label):
 
 def convertMap(itk_map): # Convert the background and unannotated, the 5 here is actually class_num + 1
     itk_map[itk_map == 0] = 5
-    itk_map[itk_map == 4] = 0 # 4 is background
+    itk_map[itk_map == 4] = 0 
     itk_map[itk_map == 5] = 4 
     return itk_map 
 
