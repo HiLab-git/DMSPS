@@ -161,7 +161,7 @@ def test_single_volume_2d_forTrainUncertainty(case_path, net, test_save_path, FL
             pred_unannotated_temp = pred 
             pred_unannotated_temp = convertMap(pred_unannotated_temp) # 0 is annotated, 4 is background
             pred_uncertainty_unanotated = pred_unannotated_temp * mask
-            pred_uncertainty_unanotated_show = convertMap(pred_uncertainty_unanotated_show) # 4 is annotated, 0 is background
+            pred_uncertainty_unanotated = convertMap(pred_uncertainty_unanotated) # 4 is annotated, 0 is background
             pred_uncertainty_unannotated_show = get_rgb_from_label_ACDC(pred_uncertainty_unanotated)
             pred_uncertainty_unannotated_show.save(uncertainty_path_save + case_name + '_sclice{}_cu_unannotated.png'.format(ind))
 
