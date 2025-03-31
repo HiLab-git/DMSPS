@@ -21,7 +21,7 @@ import random
 import matplotlib.pyplot as plt
 
 from networks.net_factory import net_factory
-from test.uttils import calculate_metric_percase, logInference, get_rgb_from_uncertainty, get_the_first_k_largest_components
+from uttils import calculate_metric_percase, logInference, get_rgb_from_uncertainty, get_the_first_k_largest_components
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 parser = argparse.ArgumentParser()
@@ -30,7 +30,7 @@ parser.add_argument('--data_root_path', type=str,
 parser.add_argument('--data_type', type=str,
                     default='Heart', help='Data category')
 parser.add_argument('--data_name', type=str,
-                    default='ACDC', help='Data name')
+                    default='ACDC_example', help='Data name')
 parser.add_argument('--testData', type=str,
                     default='trainvol.txt', help='Data text: trainvol.txt for retrain, test.txt, valid.txt')
 parser.add_argument('--savedir', type=str,
@@ -39,16 +39,16 @@ parser.add_argument('--savedir', type=str,
 parser.add_argument('--model', type=str,
                     default='unet_cct', help='model_name:unet,unet_cct, etc. the name of pretrained model from stage1')
 parser.add_argument('--exp', type=str,
-                    default='A3_weakly_PLS_soft_2d', help='experiment_name')
+                    default='A_weakly_SPS_2d', help='experiment_name')
 parser.add_argument('--fold', type=str,
                     default='stage1', help='fold name')
 parser.add_argument('--num_classes', type=int,  default=4,
                     help='output channel of network') 
-parser.add_argument('--tt_num', type=int, default=3,
+parser.add_argument('--tt_num', type=int, default=4,
                     help='test times num:3,4 for uncertainty') 
 parser.add_argument('--threshold', type=float, default=0.1,
                     help='uncertainty threshold') 
-parser.add_argument('--uncertainty_show_path', type=str, default="../../figure/MedIA_ACDC/uncertainty_thre01/",
+parser.add_argument('--uncertainty_show_path', type=str, default="../../figure/MedIA_ACDC/uncertainty_thre01_250303trashs/",
                     help='') 
 parser.add_argument('--seed', type=int,  default=2022, help='random seed')
     
@@ -245,8 +245,8 @@ def Inference(FLAGS, test_save_path):
     logging.info("test volume num:{}".format(len(image_list)))
 
     #definite net model
-    snapshot_path = "../../model/{}_{}/{}_{}".format(
-        FLAGS.data_type, FLAGS.data_name, FLAGS.exp, FLAGS.model)
+    snapshot_path = "../../model/{}_{}/{}_{}_{}".format(
+        FLAGS.data_type, FLAGS.data_name, FLAGS.exp, FLAGS.model, FLAGS.fold)
     net = net_factory(net_type = FLAGS.model, in_chns=1,
                       class_num=FLAGS.num_classes)
     save_mode_path = os.path.join(

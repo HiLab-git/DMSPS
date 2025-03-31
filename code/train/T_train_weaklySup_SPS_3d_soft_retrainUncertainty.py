@@ -51,7 +51,7 @@ parser.add_argument('--exp', type=str,
 parser.add_argument('--fold', type=str,
                     default='stage2', help='train fold name')
 parser.add_argument('--sup_type', type=str,
-                    default='pseudoLab', help='supervision type, select mode: label, scribble')
+                    default='pseudoLab', help='supervision type, select mode: label, scribble, pseudoLab')
 parser.add_argument('--num_classes', type=int,  default=3,
                     help='output channel of network')
 parser.add_argument('--max_iterations', type=int,
