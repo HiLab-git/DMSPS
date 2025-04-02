@@ -24,9 +24,6 @@ from PIL import Image
 import random
 
 from networks.net_factory_3d import net_factory_3d
-from utils.distance_metrics_fast import hd95_fast, asd_fast, assd_fast
-from networks.net_factory_3d import net_factory_3d
-from utils.distance_metrics_fast import hd95_fast, asd_fast, assd_fast
 from test.uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
 from test_3d_forall_fast_txtver_forTrainSetUncertaintyOnly_Mean import pred_single_case_3d_forTrainUncertainty
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -77,18 +74,6 @@ def weight_with_uncertainty_class_np(preds, C):#pred:numpy, [n, c, d, h, w]
     uncertainty = -1.0 * np.sum(preds * np.log(preds + 1e-16), axis=1, keepdims=True)/ np.log(C)
     return uncertainty
 
-def calculate_metric_percase(pred, gt, spacing):
-    pred[pred > 0] = 1
-    gt[gt > 0] = 1
-    if pred.sum() > 0 and gt.sum() > 0:
-        dice = metric.binary.dc(pred, gt)
-        asd = asd_fast(pred, gt, voxelspacing=spacing)
-        hd95 = hd95_fast(pred, gt, voxelspacing=spacing)
-        # asd = metric.binary.asd(pred, gt, voxelspacing=spacing)
-        # hd95 = metric.binary.hd95(pred, gt, voxelspacing=spacing)
-        return np.array([dice, asd, hd95])
-    else:
-        return np.array([0,0,0])
 
 def test_single_volume_3d_braTS(case_path, net, test_save_path, FLAGS):
     case_name = case_path.split("/")[-1].replace(".h5","")

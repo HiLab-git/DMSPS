@@ -3,17 +3,17 @@ from medpy import metric
 from scipy import ndimage
 import logging
 from PIL import Image
-from utils.distance_metrics_fast import hd95_fast, asd_fast, assd_fast
+# from utils.distance_metrics_fast import hd95_fast, asd_fast, assd_fast
 
 def calculate_metric_percase(pred, gt, spacing):
     pred[pred > 0] = 1
     gt[gt > 0] = 1
     if pred.sum() > 0 and gt.sum() > 0:
         dice = metric.binary.dc(pred, gt)
-        # asd = metric.binary.asd(pred, gt, voxelspacing=spacing)
-        # hd95 = metric.binary.hd95(pred, gt, voxelspacing=spacing)
-        asd = asd_fast(pred, gt, voxelspacing=spacing)
-        hd95 = hd95_fast(pred, gt, voxelspacing=spacing)
+        asd = metric.binary.asd(pred, gt, voxelspacing=spacing)
+        hd95 = metric.binary.hd95(pred, gt, voxelspacing=spacing)
+        # asd = asd_fast(pred, gt, voxelspacing=spacing)
+        # hd95 = hd95_fast(pred, gt, voxelspacing=spacing)
         return np.array([dice, asd, hd95])
     else:
         return np.array([0,0,0])

@@ -20,7 +20,6 @@ import logging
 import pandas as pd
 
 from networks.net_factory import net_factory
-from utils.distance_metrics_fast import hd95_fast, asd_fast, assd_fast
 from test.uttils import calculate_metric_percase, logInference
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
