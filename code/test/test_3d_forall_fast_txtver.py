@@ -228,10 +228,21 @@ if __name__ == '__main__':
     os.makedirs(test_save_path)
     os.makedirs(test_save_path + "/log")
 
-    logging.basicConfig(filename=test_save_path+"/log/test"+str(FLAGS.tt_num)+"_info.txt", level=logging.INFO,
-                        format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S', 
-                       )
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+    # logging.basicConfig(filename=test_save_path+"/log/test"+str(FLAGS.tt_num)+"_info.txt", level=logging.INFO,
+    #                     format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S', 
+    #                    )
+    # logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+    logger = logging.getLogger()
+    logger.handlers.clear()
+    file_handler = logging.FileHandler(test_save_path+"/log/test"+str(FLAGS.tt_num)+"_info.txt")
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(logging.Formatter('[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S'))
+    logger.addHandler(file_handler)
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(message)s'))  # 控制台输出不带时间
+    logger.addHandler(console_handler)
 
     logging.info(str(FLAGS))
     start_time = time.time()
