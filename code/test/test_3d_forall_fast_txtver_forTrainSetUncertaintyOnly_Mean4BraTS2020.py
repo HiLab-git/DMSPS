@@ -43,7 +43,7 @@ parser.add_argument('--savedir', type=str,
                     default='TrResult', help='TsResult for testSet, ValResult for valSet, TrResult for trainSet')
 
 parser.add_argument('--model', type=str,
-                    default='unet_cct_dropout_3D', help='select mode: unet_cct_dp_3D, \
+                    default='unet_cct_dp_3D', help='select mode: unet_cct_dp_3D, \
                         attention_unet_2dual_3d, unetr_2dual_3d ')
 parser.add_argument('--exp', type=str,
                     default='T_weakly_SPS_3d', help='experiment_name')
