@@ -68,7 +68,7 @@ class Encoder_dp(nn.Module):
         center = self.center(maxpool4)
 
         return [conv1, conv2, conv3, conv4, center]
-
+    
 class Decoder_dp(nn.Module): 
     def __init__(self, params):
         super(Decoder_dp, self).__init__()

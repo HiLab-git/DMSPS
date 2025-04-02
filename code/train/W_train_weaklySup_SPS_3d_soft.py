@@ -30,7 +30,7 @@ from networks.net_factory_3d import net_factory_3d
 from utils import losses, metrics, ramps
 from val_3D import test_all_case_3D
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_root_path', type=str,
                     default='/mnt/data/HM/Datasets/Abdomen_word/WORD-V0.1.0-Admin_cropWL_for3D', 
@@ -49,7 +49,7 @@ parser.add_argument('--model', type=str,
                     default='unet_cct_dp_3D', help='select mode: unet_cct_dp_3D, \
                         attention_unet_2dual_3d, unetr_2dual_3d')
 parser.add_argument('--exp', type=str,
-                    default='A3_weakly_PLS_soft_3d', help='experiment_name')
+                    default='W_weakly_PLS_soft_3d', help='experiment_name')
 parser.add_argument('--fold', type=str,
                     default='stage1', help='train fold name')
 parser.add_argument('--sup_type', type=str,
@@ -274,9 +274,21 @@ if __name__ == "__main__":
         __file__, os.path.join(snapshot_path, run_id + "_" + os.path.basename(__file__))
     )
 
-    logging.basicConfig(filename=snapshot_path+"/train_log.txt", level=logging.INFO,
-                        format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+    # logging.basicConfig(filename=snapshot_path+"/train_log.txt", level=logging.INFO,
+    #                     format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
+    # logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+    logger = logging.getLogger()
+    logger.handlers.clear()
+    file_handler = logging.FileHandler(snapshot_path+"/train_log.txt")
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(logging.Formatter('[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S'))
+    logger.addHandler(file_handler)
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(message)s')) 
+    logger.addHandler(console_handler)
+
     logging.info(str(args))
     start_time = time.time()
     train(args, snapshot_path)

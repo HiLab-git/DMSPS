@@ -11,16 +11,16 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--data_root_path', type=str,
                     default='/mnt/data/HM/Datasets/Abdomen_word/WORD-V0.1.0-Admin_cropWL', help='Name of Experiment')
 parser.add_argument('--data_type', type=str,
-                    default='AbdomenM', help='Data category')
+                    default='Abdomen', help='Data category')
 parser.add_argument('--data_name', type=str,
                     default='word_3d', help='Data name') 
 parser.add_argument('--savedir', type=str,
                     default='TrResult', help='TsResult for testSet, ValResult for valSet, TrResult for trainSet')
  
 parser.add_argument('--model', type=str,
-                    default='unet_cct_dropout_3D', help='model_name')
+                    default='unet_cct_dp_3D', help='model_name')
 parser.add_argument('--exp', type=str,
-                    default='A3_weakly_PLS_3d', help='experiment_name')
+                    default='W_weakly_PLS_soft_3d', help='experiment_name')
 parser.add_argument('--fold', type=str,
                     default='stage1', help='')
 parser.add_argument('--num_classes', type=int,  default=8,
@@ -28,7 +28,7 @@ parser.add_argument('--num_classes', type=int,  default=8,
 parser.add_argument('--tt_num', type=int, default=3,
                     help='test times num') 
 
-parser.add_argument('--func', type=int, default=0,
+parser.add_argument('--func', type=int, default=1,
                     help='function') 
 parser.add_argument('--txtName', type=str, default="trainReT03",
                     help='txt name') 
@@ -83,11 +83,11 @@ def deal_retrainData_to_volumes(pred_data_path, flag, subdir = "Tr" ):#for retra
     print("Converted data re" + subdir +  " data to  volumes")
     print("Total {}  re{} volumes".format(volume_num, subdir))
 
-def write_images_nametxt(flag, subdir = "Tr"):
+def write_images_nametxt(flag):
     input_root = FLAGS.data_root_path  + "_for3D"
     output_info_dir = input_root
     
-    img_dir = subdir + flag
+    img_dir = flag
     info_img_dir = input_root + "/" + img_dir
     img_names = sorted(os.listdir(info_img_dir)) 
     txtname = flag.replace("_volumes","") 

@@ -27,7 +27,7 @@ import random
 # from networks.efficientunet import UNet
 from networks.net_factory_3d import net_factory_3d
 from utils.distance_metrics_fast import hd95_fast, asd_fast, assd_fast
-from test.uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
+from uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
@@ -49,7 +49,7 @@ parser.add_argument('--model', type=str,
                     default='unet_cct_dp_3D', help='select mode: unet_cct_dp_3D, \
                         attention_unet_2dual_3d, unetr_2dual_3d')
 parser.add_argument('--exp', type=str,
-                    default='A_weakly_SPS_3d', help='experiment_name')
+                    default='W_weakly_PLS_soft_3d', help='experiment_name')
 parser.add_argument('--fold', type=str,
                     default='stage1', help='fold name') 
 parser.add_argument('--num_classes', type=int,  default=8,
@@ -330,8 +330,8 @@ def Inference(FLAGS, test_save_path):
     logging.info("test volume num:{}".format(len(image_list)))
     
     #definite net model
-    snapshot_path = "../../model/{}_{}/{}_{}".format(
-        FLAGS.data_type, FLAGS.data_name, FLAGS.exp, FLAGS.model)
+    snapshot_path = "../../model/{}_{}/{}_{}_{}".format(
+        FLAGS.data_type, FLAGS.data_name, FLAGS.exp, FLAGS.model, FLAGS.fold)
     net = net_factory_3d(net_type = FLAGS.model, in_chns=1,
                       class_num=FLAGS.num_classes)
     save_mode_path = os.path.join(
@@ -379,10 +379,22 @@ if __name__ == '__main__':
     os.makedirs(test_save_path)
     os.makedirs(test_save_path + "/log")
 
-    logging.basicConfig(filename=test_save_path+"/log/test"+str(FLAGS.tt_num)+"_info.txt", level=logging.INFO,
-                        format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S', 
-                       )
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+    # logging.basicConfig(filename=test_save_path+"/log/test"+str(FLAGS.tt_num)+"_info.txt", level=logging.INFO,
+    #                     format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S', 
+    #                    )
+    # logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+    logger = logging.getLogger()
+    logger.handlers.clear()
+    file_handler = logging.FileHandler(test_save_path+"/log/test"+str(FLAGS.tt_num)+"_info.txt")
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(logging.Formatter('[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S'))
+    logger.addHandler(file_handler)
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(message)s'))  # 控制台输出不带时间
+    logger.addHandler(console_handler)
+
     logging.info(str(FLAGS))
     start_time = time.time()
     Inference(FLAGS, test_save_path)

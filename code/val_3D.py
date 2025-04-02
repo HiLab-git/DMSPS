@@ -64,7 +64,8 @@ def test_single_case_HM(net, net_type,  image, stride_xy, stride_z, patch_size, 
     sz = math.ceil((dd - patch_size[2]) / stride_z) + 1
     
     score_map = np.zeros((num_classes, ) + (ww, hh, dd)).astype(np.float32)
-    cnt = np.zeros(ww, hh, dd).astype(np.float32)
+    #cnt = np.zeros(ww, hh, dd).astype(np.float32)
+    cnt=np.zeros((ww,hh,dd), dtype=np.float32)
 
 
     for x in range(0, sx):
@@ -88,7 +89,7 @@ def test_single_case_HM(net, net_type,  image, stride_xy, stride_z, patch_size, 
                 with torch.no_grad():
                     if net_type == "unet_3D_dv_semi":
                         y1, _, _, _ = net(test_patch)
-                    elif net_type == "unet_cct_dropout_3D" or net_type == "attention_unet_2dual_3d"\
+                    elif net_type == "unet_cct_dp_3D" or net_type == "attention_unet_2dual_3d"\
                         or net_type == "unetr_2dual_3d":
                         y1, _ = net(test_patch)
                     else:

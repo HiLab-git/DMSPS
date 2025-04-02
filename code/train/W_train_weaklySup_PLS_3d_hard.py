@@ -282,9 +282,20 @@ if __name__ == "__main__":
     )
 
 
-    logging.basicConfig(filename=snapshot_path+"/train_log.txt", level=logging.INFO,
-                        format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+    # logging.basicConfig(filename=snapshot_path+"/train_log.txt", level=logging.INFO,
+    #                     format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
+    # logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+    logger = logging.getLogger()
+    logger.handlers.clear()
+    file_handler = logging.FileHandler(snapshot_path+"/train_log.txt")
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(logging.Formatter('[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S'))
+    logger.addHandler(file_handler)
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(message)s')) 
+    logger.addHandler(console_handler)
     logging.info(str(args))
     start_time = time.time()
     train(args, snapshot_path)

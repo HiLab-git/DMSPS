@@ -21,7 +21,7 @@ def calculate_metric_percase(pred, gt, spacing):
 def logInference(metric_onTest_all_list):
     metric_onTest_all_list = np.asarray(metric_onTest_all_list)  
     avg_metric_on_list = np.mean(metric_onTest_all_list,axis=0)
-    logging.info("avg metric of each organ[dsc,asd,hd95]:".format(avg_metric_on_list))
+    logging.info("avg metric of each organ[dsc,asd,hd95]:{}".format(avg_metric_on_list))
     metricOf3 = np.mean(avg_metric_on_list,axis=0)
     logging.info("mean metric of all[dice,asd,hd95]:{}".format(metricOf3))
     std = np.std(metric_onTest_all_list,axis = 0)
