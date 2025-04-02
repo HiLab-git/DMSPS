@@ -49,7 +49,7 @@ parser.add_argument('--model', type=str,
                     default='unet_cct_dp_3D', help='select mode: unet_cct_dp_3D, \
                         attention_unet_2dual_3d, unetr_2dual_3d')
 parser.add_argument('--exp', type=str,
-                    default='W_weakly_PLS_soft_3d', help='experiment_name')
+                    default='W_weakly_SPS_3d', help='experiment_name')
 parser.add_argument('--fold', type=str,
                     default='stage1', help='train fold name')
 parser.add_argument('--sup_type', type=str,

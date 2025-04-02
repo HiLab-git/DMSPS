@@ -23,7 +23,7 @@ import logging
 
 # from networks.efficientunet import UNet
 from networks.net_factory_3d import net_factory_3d
-from test.uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
+from uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
 
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -126,7 +126,7 @@ def pred_single_case_3d(net, net_type, image, stride_xy, stride_z, patch_size, n
                 test_patch = torch.from_numpy(test_patch).cuda()
                 with torch.no_grad():
                     if net_type == "unet_cct_dropout_3D" or net_type == "attention_unet_2dual_3d"\
-                        or net_type == "unetr_2dual_3d":
+                        or net_type == "unetr_2dual_3d" or net_type =="unet_cct_dp_3D":
                         y_main, _ = net(test_patch)
                     else:
                         y_main = net(test_patch)
