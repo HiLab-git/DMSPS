@@ -29,15 +29,68 @@ If you use this project in your research, please cite the following works:
 ```
 
 # Dataset
-* The ACDC dataset with mask annotations can be downloaded from: [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html).
-* The Scribble annotations of ACDC can be downloaded from: [Scribble](https://gvalvano.github.io/wss-multiscale-adversarial-attention-gates/data).
-* The ACDC data can also be downloaded from the following BaiduPan link, where the same training set, test set and verification set as in DMSPS have been divided: [ACDC BaiduPan](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg). The extraction code is：et38 .
+* For ACDC dataset, the images, scribbles and data split can be downloaded from [ACDC BaiduPan](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg) (The extraction code is：et38), or [Google Drive](). 
 * The WORD dataset can be downloaded from [WORD](https://github.com/HiLab-git/WORD?tab=readme-ov-file).
 * The BraTS2020 dataset can be downloaded from [BraTS2020](https://www.med.upenn.edu/cbica/brats2020/data.html). Note that this work aimed to segment two foreground classes: the tumor core and the peritumoral
 edema. Scribbles could be genearted by this simulation code: [scribble-generate](https://github.com/HiLab-git/DMSPS/blob/master/code/dataloader/scribble_generater.py)
 
+# Usage (latest version in PyMIC, suggested)
+To facilitate the use of code and make it easier to compare with other methods, we have re-implemented DMSPS in PyMIC. The core modules of DMSPS in PyMIC can be found [here](). 
+In the following, we take the ACDC dataset as an example for scribble-supervised segmentation.
 
-# Usage: [Taking the ACDC segmentation task as an example]
+### Step 0: Preparation
+1. Install PyMIC. 
+```
+pip install pymic==0.5.0
+```
+2. Dataset convert.
+To speed up the training process, we convert the data into h5 files. 
+```
+python image_process.py 0
+```
+### Step 1: Training the first stage model
+1. The configurations including dataset, network, optimizer and hyper-parameters are contained in the configure file
+`config/acdc_dmsps.cfg`.Train the first stage model by running:
+```
+python run.py train config/acdc_dmsps.cfg
+```
+2. Obtain predictions for testing images:
+```
+python run.py test config/acdc_dmsps.cfg
+```
+3. Obtain quantitative evaluation results:
+```
+pymic_eval_seg --metric dice --cls_num 4 \
+  --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps \
+  --name_pair ./config/image_test_gt_seg.csv
+```
+4. Then obtain the expanded seeds based on confident predictions from the first stage model, which is saved in `./result/acdc_dmsps_train`.
+```
+python run.py test config/acdc_dmsps.cfg  --test_csv data/ACDC2017/ACDC_for2D/trainvol.csv \
+  --dmsps_test_mode 1 --output_dir result/acdc_dmsps_train
+```
+5. Create the training set for the second-stage model:
+```
+python image_process.py 1
+```
+### Step 2: Training the second stage model
+1. Just like the first stage, train the model use:
+```
+python run.py train config/acdc_dmsps_stage2.cfg
+```
+Note that to speedup the training process, we finetune the first-stage model here. You may also try to train from scratch. 
+2. Test with the second-stage model:
+```
+python run.py test config/acdc_dmsps_stage2.cfg
+```
+3. Obtain quantitative evaluation results:
+```
+pymic_eval_seg --metric dice --cls_num 4 \
+  --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps_stage2 \
+  --name_pair ./config/image_test_gt_seg.csv
+```
+
+# Usage (for the old version, not suggested)
 ### Step0:
 1. Clone this project. 
 ```
