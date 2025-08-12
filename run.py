@@ -1,4 +1,18 @@
 # -*- coding: utf-8 -*-
+'''`
+Code for the following paper:
+  https://www.sciencedirect.com/science/article/abs/pii/S1361841524001993?dgcid
+    @article{han2024dmsps,
+    title={DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation},
+    author={Han, Meng and Luo, Xiangde and Xie, Xiangjiang and Liao, Wenjun and Zhang, Shichuan and Song, Tao and Wang, Guotai and Zhang, Shaoting},
+    journal={Medical Image Analysis},
+    pages={103274},
+    year={2024},
+    publisher={Elsevier}
+}
+
+'''
+
 from __future__ import print_function, division
 import argparse
 import logging
@@ -113,9 +127,6 @@ def main():
     net_dict.update(SegNetDict)
     agent.set_transform_dict(trans_dict)
     agent.set_net_dict(net_dict)
-    # use custormized network and loss function
-    # mynet  = DBNet(config['network'])
-    # agent.set_network(mynet)
     agent.run()
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 # DMSPS
-official code for: DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation. MedIA 2024 [MedIA](https://www.sciencedirect.com/science/article/pii/S1361841524001993?dgcid=author).
+Official code for: DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation. MedIA 2024 [MedIA](https://www.sciencedirect.com/science/article/pii/S1361841524001993?dgcid=author).
 And the previous version is published on the [MICCAI](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_50) 2022.
 
 ### Overall Framework
@@ -34,23 +34,26 @@ If you use this project in your research, please cite the following works:
 * The BraTS2020 dataset can be downloaded from [BraTS2020](https://www.med.upenn.edu/cbica/brats2020/data.html). Note that this work aimed to segment two foreground classes: the tumor core and the peritumoral
 edema. Scribbles could be genearted by this simulation code: [scribble-generate](https://github.com/HiLab-git/DMSPS/blob/master/code/dataloader/scribble_generater.py)
 
-# Usage (latest version in PyMIC, suggested)
-To facilitate the use of code and make it easier to compare with other methods, we have re-implemented DMSPS in PyMIC. The core modules of DMSPS in PyMIC can be found [here](). 
-In the following, we take the ACDC dataset as an example for scribble-supervised segmentation.
+# Usage with PyMIC
+To facilitate the use of code and make it easier to compare with other methods, we have re-implemented DMSPS in PyMIC, a Pytorch-based framework for annotation-efficient segmentation. The core modules of DMSPS in PyMIC can be found [here][pymic_dmsps]. It is suggested to use PyMIC for this experiment. In the following, we take the ACDC dataset as an example for scribble-supervised segmentation.
+
+[pymic_dmsps]: https://github.com/HiLab-git/PyMIC/blob/master/pymic/net_run/weak_sup/wsl_dmsps.py
 
 ### Step 0: Preparation
 1. Install PyMIC. 
 ```
-pip install pymic==0.5.0
+pip install pymic==0.5.4
 ```
 2. Dataset convert.
-To speed up the training process, we convert the data into h5 files. 
+To speed up the training process, we convert the data into h5 files.
 ```
 python image_process.py 0
 ```
+To run this code, you need to set `ACDC_DIR` to the path of the  ACDC dataset after download.
+
 ### Step 1: Training the first stage model
 1. The configurations including dataset, network, optimizer and hyper-parameters are contained in the configure file
-`config/acdc_dmsps.cfg`.Train the first stage model by running:
+`config/acdc_dmsps.cfg`. Train the first-stage model by running:
 ```
 python run.py train config/acdc_dmsps.cfg
 ```
@@ -89,8 +92,18 @@ pymic_eval_seg --metric dice --cls_num 4 \
   --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps_stage2 \
   --name_pair ./config/image_test_gt_seg.csv
 ```
+### Step 3: Training with sparser annotations
+The original scribbles for the ACDC dataset was quite dense, and to investigate the performance under sparser annotations, we have reduced the scribble length to 1/2, 1/4, 1/8 and 1/16, respectively. For example, to train the model with scribbles at length of 1/4,  run:
+```
+python run.py train config/acdc_dmsps_r4.cfg
+```
 
-# Usage (for the old version, not suggested)
+### Step 4: Compare with other weakly supervised segmentation methods
+PyMIC also provides implementation of several other weakly supervised methods (learning from scribbles). Please see [PyMIC_example][PyMIC_example_link] for examples.
+
+[PyMIC_example_link]:https://github.com/HiLab-git/PyMIC_examples/tree/main/seg_weak_sup/ACDC 
+
+# Usage (a backup of the old version)
 ### Step0:
 1. Clone this project. 
 ```
