@@ -29,11 +29,14 @@ If you use this project in your research, please cite the following works:
 ```
 
 # Dataset
-* For ACDC dataset, the images, scribbles and data split can be downloaded from [ACDC BaiduPan](https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg) (The extraction code is：et38), or [Google Drive](). 
+* For ACDC dataset, the images, scribbles and data split can be downloaded from [ACDC BaiduPan][baidu_acdc] (The extraction code is: remr), or [Google Drive][google_acdc]. 
 * The WORD dataset can be downloaded from [WORD](https://github.com/HiLab-git/WORD?tab=readme-ov-file).
 * The BraTS2020 dataset can be downloaded from [BraTS2020](https://www.med.upenn.edu/cbica/brats2020/data.html). Note that this work aimed to segment two foreground classes: the tumor core and the peritumoral
 edema. Scribbles could be genearted by this simulation code: [scribble-generate](https://github.com/HiLab-git/DMSPS/blob/master/code/dataloader/scribble_generater.py)
 
+[baidu_acdc]: https://pan.baidu.com/s/1yWD0zkfy17AlexhKP4dQMQ
+[baidu_acdc_old_code_et38]: https://pan.baidu.com/s/1Wqcw_qFNezplzdewQMHXsg
+[google_acdc]: https://drive.google.com/file/d/1QffBpxfUgZmMQOiGa24IMhygS_Q8NtrI/view?usp=sharing
 # Usage with PyMIC
 To facilitate the use of code and make it easier to compare with other methods, we have re-implemented DMSPS in PyMIC, a Pytorch-based framework for annotation-efficient segmentation. The core modules of DMSPS in PyMIC can be found [here][pymic_dmsps]. It is suggested to use PyMIC for this experiment. In the following, we take the ACDC dataset as an example for scribble-supervised segmentation.
 
