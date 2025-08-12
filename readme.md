@@ -1,6 +1,6 @@
 # DMSPS
-Official code for: DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation. MedIA 2024 [MedIA](https://www.sciencedirect.com/science/article/pii/S1361841524001993?dgcid=author).
-And the previous version is published on the [MICCAI](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_50) 2022.
+Official code for: DMSPS: Dynamically mixed soft pseudo-label supervision for scribble-supervised medical image segmentation. [MedIA 2024](https://www.sciencedirect.com/science/article/pii/S1361841524001993?dgcid=author).
+And the previous version is published on the [MICCAI 2022](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_50).
 
 ### Overall Framework
 The overall framework of DMSPS：
@@ -67,7 +67,7 @@ pymic_eval_seg --metric dice --cls_num 4 \
   --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps \
   --name_pair ./config/image_test_gt_seg.csv
 ```
-4. Then obtain the expanded seeds based on confident predictions from the first stage model, which is saved in `./result/acdc_dmsps_train`.
+4. Then obtain the expanded seeds based on confident predictions from the first stage model.
 ```
 python run.py test config/acdc_dmsps.cfg  --test_csv data/ACDC2017/ACDC_for2D/trainvol.csv \
   --dmsps_test_mode 1 --output_dir result/acdc_dmsps_train
@@ -82,6 +82,7 @@ python image_process.py 1
 python run.py train config/acdc_dmsps_stage2.cfg
 ```
 Note that to speedup the training process, we finetune the first-stage model here. You may also try to train from scratch. 
+
 2. Test with the second-stage model:
 ```
 python run.py test config/acdc_dmsps_stage2.cfg
@@ -99,7 +100,7 @@ python run.py train config/acdc_dmsps_r4.cfg
 ```
 
 ### Step 4: Compare with other weakly supervised segmentation methods
-PyMIC also provides implementation of several other weakly supervised methods (learning from scribbles). Please see [PyMIC_example][PyMIC_example_link] for examples.
+PyMIC also provides implementation of several other weakly supervised methods (learning from scribbles). Please see [PyMIC_examples/seg_weak_sup/ACDC][PyMIC_example_link] for examples.
 
 [PyMIC_example_link]:https://github.com/HiLab-git/PyMIC_examples/tree/main/seg_weak_sup/ACDC 
 
