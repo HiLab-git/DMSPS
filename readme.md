@@ -67,6 +67,8 @@ pymic_eval_seg --metric dice --cls_num 4 \
   --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps \
   --name_pair ./config/image_test_gt_seg.csv
 ```
+The average Dice on the test set would be around 88.94%.
+
 4. Then obtain the expanded seeds based on confident predictions from the first stage model.
 ```
 python run.py test config/acdc_dmsps.cfg  --test_csv data/ACDC2017/ACDC_for2D/trainvol.csv \
@@ -93,11 +95,17 @@ pymic_eval_seg --metric dice --cls_num 4 \
   --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps_stage2 \
   --name_pair ./config/image_test_gt_seg.csv
 ```
+The average Dice on the test set would be around 89.51%.
 ### Step 3: Training with sparser annotations
-The original scribbles for the ACDC dataset was quite dense, and to investigate the performance under sparser annotations, we have reduced the scribble length to 1/2, 1/4, 1/8 and 1/16, respectively. For example, to train the model with scribbles at length of 1/4,  run:
+The original scribbles for the ACDC dataset was quite dense, and to investigate the performance under sparser annotations, we have reduced the scribble length to 1/2, 1/4, 1/8 and 1/16, respectively. For example, to train and test the model with scribbles at length of 1/4,  run:
 ```
 python run.py train config/acdc_dmsps_r4.cfg
+python run.py test config/acdc_dmsps_r4.cfg
+pymic_eval_seg --metric dice --cls_num 4 \
+  --gt_dir data/ACDC2017/ACDC/TestSet/labels --seg_dir ./result/acdc_dmsps_r4 \
+  --name_pair ./config/image_test_gt_seg.csv
 ```
+The average Dice on the test set would be around 86.78%.
 
 ### Step 4: Compare with other weakly supervised segmentation methods
 PyMIC also provides implementation of several other weakly supervised methods (learning from scribbles). Please see [PyMIC_examples/seg_weak_sup/ACDC][PyMIC_example_link] for examples.
